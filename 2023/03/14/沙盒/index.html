@@ -464,14 +464,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="–-在这里做一些功能开发和测试-–"><a href="#–-在这里做一些功能开发和测试-–" class="headerlink" title="– 在这里做一些功能开发和测试 –"></a>– 在这里做一些功能开发和测试 –</h2><h2 id="插入图片测试"><a href="#插入图片测试" class="headerlink" title="插入图片测试:"></a>插入图片测试:</h2><p>代码如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img text.png This is an test image %&#125;</span><br></pre></td></tr></table></figure>
+                <p>在这里进行功能测试和模板开发(๑•̀ㅂ•́) ✧</p>
+<span id="more"></span>
+
+<p>紧接着文章摘要的正文内容</p>
+<h2 id="文档头"><a href="#文档头" class="headerlink" title="文档头"></a>文档头</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">date:</span><br><span class="line">updated:</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">comments:</span><br><span class="line">layout:</span><br><span class="line">permalink:</span><br><span class="line">excerpt:</span><br><span class="line">disableNunjucks:</span><br><span class="line"></span><br><span class="line">layout	布局	config.default_layout</span><br><span class="line">title	标题	文章的文件名</span><br><span class="line">date	建立日期	文件建立日期</span><br><span class="line">updated	更新日期	文件更新日期</span><br><span class="line">comments	开启文章的评论功能	true</span><br><span class="line">tags	标签（不适用于分页）	</span><br><span class="line">categories	分类（不适用于分页）	</span><br><span class="line">permalink	覆盖文章网址	</span><br><span class="line">excerpt	纯文本页面摘录。使用此插件格式化文本	</span><br><span class="line">disableNunjucks	启用时禁用 Nunjucks 标签&#123;&#123; &#125;&#125;/&#123;% %&#125;和标签插件的呈现	</span><br><span class="line">lang	设置语言以覆盖 自动检测	继承自_config.yml</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## 插入图片测试:</span><br><span class="line">代码如下</span><br></pre></td></tr></table></figure>
 <img src="/2023/03/14/%E6%B2%99%E7%9B%92/text.png" class="" title="This is an test image">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_img text.png This is an test image %&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## 代码块测试</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>title: 沙盒<br>date: 2023-03-14 08:10:21<br>tags: 测试tag<br>categories: 测试分类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 代码高亮显示测试</span><br></pre></td></tr></table></figure>
+<p>void D3DApp::CalculateFrameStats()<br>{<br>    &#x2F;&#x2F; 该代码计算每秒帧速，并计算每一帧渲染需要的时间，显示在窗口标题<br>    static int frameCnt &#x3D; 0;<br>    static float timeElapsed &#x3D; 0.0f;</p>
+<pre><code>frameCnt++;
 
+if ((m_Timer.TotalTime() - timeElapsed) &gt;= 1.0f)
+&#123;
+    float fps = (float)frameCnt; // fps = frameCnt / 1
+    float mspf = 1000.0f / fps;
 
-<h2 id="代码块测试"><a href="#代码块测试" class="headerlink" title="代码块测试"></a>代码块测试</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 沙盒</span><br><span class="line">date: 2023-03-14 08:10:21</span><br><span class="line">tags: 测试tag</span><br><span class="line">categories: 测试分类</span><br></pre></td></tr></table></figure>
+    std::wostringstream outs;
+    outs.precision(6);
+    outs &lt;&lt; m_MainWndCaption &lt;&lt; L&quot;    &quot;
+        &lt;&lt; L&quot;FPS: &quot; &lt;&lt; fps &lt;&lt; L&quot;    &quot;
+        &lt;&lt; L&quot;Frame Time: &quot; &lt;&lt; mspf &lt;&lt; L&quot; (ms)&quot;;
+    SetWindowText(m_hMainWnd, outs.str().c_str());
 
-<h2 id="代码高亮显示测试"><a href="#代码高亮显示测试" class="headerlink" title="代码高亮显示测试"></a>代码高亮显示测试</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">void D3DApp::CalculateFrameStats()</span><br><span class="line">&#123;</span><br><span class="line">	// 该代码计算每秒帧速，并计算每一帧渲染需要的时间，显示在窗口标题</span><br><span class="line">	static int frameCnt = 0;</span><br><span class="line">	static float timeElapsed = 0.0f;</span><br><span class="line"></span><br><span class="line">	frameCnt++;</span><br><span class="line"></span><br><span class="line">	if ((m_Timer.TotalTime() - timeElapsed) &gt;= 1.0f)</span><br><span class="line">	&#123;</span><br><span class="line">		float fps = (float)frameCnt; // fps = frameCnt / 1</span><br><span class="line">		float mspf = 1000.0f / fps;</span><br><span class="line"></span><br><span class="line">		std::wostringstream outs;</span><br><span class="line">		outs.precision(6);</span><br><span class="line">		outs &lt;&lt; m_MainWndCaption &lt;&lt; L&quot;    &quot;</span><br><span class="line">			&lt;&lt; L&quot;FPS: &quot; &lt;&lt; fps &lt;&lt; L&quot;    &quot;</span><br><span class="line">			&lt;&lt; L&quot;Frame Time: &quot; &lt;&lt; mspf &lt;&lt; L&quot; (ms)&quot;;</span><br><span class="line">		SetWindowText(m_hMainWnd, outs.str().c_str());</span><br><span class="line"></span><br><span class="line">		// Reset for next average.</span><br><span class="line">		frameCnt = 0;</span><br><span class="line">		timeElapsed += 1.0f;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    // Reset for next average.
+    frameCnt = 0;
+    timeElapsed += 1.0f;
+&#125;
+</code></pre>
+<p>}</p>
+<p>&#96;&#96;&#96;</p>
+
                 
             </div>
             <hr/>
@@ -645,7 +671,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            在这里进行功能测试和模板开发(๑•̀ㅂ•́) ✧
                         
                     </div>
                     <div class="publish-info">
