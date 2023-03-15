@@ -496,8 +496,38 @@
 <ol start="2">
 <li><strong>在渲染管线上创建并绑定输入布局</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HR(m_pd3dDevice-&gt;CreateInputLayout(VertexPosColor::inputLayout,       ARRAYSIZE(VertexPosColor::inputLayout),</span><br><span class="line">		blob-&gt;GetBufferPointer(), blob-&gt;GetBufferSize(), m_pVertexLayout.GetAddressOf()));</span><br></pre></td></tr></table></figure></li>
 </ol>
-<p>blob即顶点着色器 , m_pVertexLayout即顶点缓冲区</p>
+<p>blob即顶点着色器<br>此时我们获得了一个顶点布局m_pVertexLayout (后面要用)</p>
+<ol start="3">
+<li><strong>设置顶点数据</strong><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">VertexPosColor vertices[] =</span><br><span class="line">	&#123;</span><br><span class="line">		&#123; XMFLOAT3(0.0f, 0.5f, 0.9f), XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f) &#125;,</span><br><span class="line">		&#123; XMFLOAT3(0.5f, -0.5f, 0.9f), XMFLOAT4(0.0f, 1.0f, 1.0f, 1.0f) &#125;,</span><br><span class="line">		&#123; XMFLOAT3(0.0f, -0.5f, 0.9f), XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f) &#125;,</span><br><span class="line">		&#123; XMFLOAT3(0.0f, 0.5f, 0.1f), XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f) &#125;,</span><br><span class="line">		&#123; XMFLOAT3(0.5f, 0.5f, 0.1f), XMFLOAT4(0.0f, 1.0f, 0.0f, 1.0f) &#125;,</span><br><span class="line">		&#123; XMFLOAT3(0.5f, -0.5f, 0.1f), XMFLOAT4(0.0f, 0.0f, 1.0f, 1.0f) &#125;</span><br><span class="line">	&#125;;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>这里展示了六个顶点</p>
+<ol start="4">
+<li><strong>设置顶点缓冲区描述</strong></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">D3D11_BUFFER_DESC vbd;</span><br><span class="line">ZeroMemory(&amp;vbd, sizeof(vbd));     </span><br><span class="line">vbd.Usage = D3D11_USAGE_IMMUTABLE;</span><br><span class="line">vbd.ByteWidth = sizeof vertices;</span><br><span class="line">vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;</span><br><span class="line">vbd.CPUAccessFlags = 0;</span><br></pre></td></tr></table></figure>
 
+<ol start="5">
+<li><p><strong>新建顶点缓冲区</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D3D11_SUBRESOURCE_DATA InitData;</span><br><span class="line">ZeroMemory(&amp;InitData, sizeof(InitData));</span><br><span class="line">InitData.pSysMem = vertices;</span><br><span class="line">HR(m_pd3dDevice-&gt;CreateBuffer(&amp;vbd, &amp;InitData, m_pVertexBuffer.GetAddressOf()));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>**将顶点缓冲区绑定到输入装配器(IA)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 输入装配阶段的顶点缓冲区设置</span><br><span class="line">	UINT stride = sizeof(VertexPosColor);	// 跨越字节数</span><br><span class="line">	UINT offset = 0;						// 起始偏移量</span><br><span class="line"></span><br><span class="line">	m_pd3dImmediateContext-&gt;IASetVertexBuffers(0, 1, m_pVertexBuffer.GetAddressOf(), &amp;stride, &amp;offset);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>**设定图元类型</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 设置图元类型</span><br><span class="line">	m_pd3dImmediateContext-&gt;IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);</span><br></pre></td></tr></table></figure>
+
+<p>TRIANGLELIST即为三角形</p>
+<ol start="8">
+<li><p>设定输入布局</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//设定输入布局</span><br><span class="line">m_pd3dImmediateContext-&gt;IASetInputLayout(m_pVertexLayout.Get());</span><br></pre></td></tr></table></figure>
+<p>将第2步中得到的输入布局绑定到输入装配器(IA)</p>
+</li>
+<li><p>将着色器绑定到渲染管线</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 将着色器绑定到渲染管线</span><br><span class="line">	m_pd3dImmediateContext-&gt;VSSetShader(m_pVertexShader.Get(), nullptr, 0);</span><br><span class="line">	m_pd3dImmediateContext-&gt;PSSetShader(m_pPixelShader.Get(), nullptr, 0);</span><br></pre></td></tr></table></figure>
                 
             </div>
             <hr/>
