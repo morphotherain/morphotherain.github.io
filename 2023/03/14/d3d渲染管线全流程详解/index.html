@@ -486,7 +486,7 @@
 
 <h2 id="1-输入装配阶段"><a href="#1-输入装配阶段" class="headerlink" title="1. 输入装配阶段"></a>1. 输入装配阶段</h2><p>这是一个<strong>不可编程阶段</strong> , 也就是说它的功能和实现都是固定的.<br>输入装配器从<strong>顶点缓冲区</strong>读取顶点数据 , 再从<strong>索引缓冲区</strong>读取索引数据 . 最后根据索引数据将各个顶点组装成一个个<strong>图元</strong> , 这些图元将被送往下一个阶段 (顶点处理阶段)</p>
 <p>图元的类型可以是三角形 , 四边形 , 线段 以及 点</p>
-<p>把数据送往输入装配阶段有如下步骤 :</p>
+<p>把数据送往输入装配阶段有如下步骤 </p>
 <h4 id="1-创建输入布局对象"><a href="#1-创建输入布局对象" class="headerlink" title="(1). 创建输入布局对象"></a>(1). <strong>创建输入布局对象</strong></h4><pre class=" language-cpp"><code class="language-cpp">D3D11_INPUT_ELEMENT_DESC inputLayout<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
     <span class="token punctuation">{</span> <span class="token string">"POSITION"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> DXGI_FORMAT_R32G32B32_FLOAT<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> D3D11_INPUT_PER_VERTEX_DATA<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">{</span> <span class="token string">"COLOR"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> DXGI_FORMAT_R32G32B32A32_FLOAT<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> D3D11_INPUT_PER_VERTEX_DATA<span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">}</span>
@@ -538,6 +538,20 @@ m_pd3dImmediateContext<span class="token operator">-</span><span class="token op
     m_pd3dImmediateContext<span class="token operator">-</span><span class="token operator">></span><span class="token function">VSSetShader</span><span class="token punctuation">(</span>m_pVertexShader<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">nullptr</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     m_pd3dImmediateContext<span class="token operator">-</span><span class="token operator">></span><span class="token function">PSSetShader</span><span class="token punctuation">(</span>m_pPixelShader<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">nullptr</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+<h2 id="2-顶点处理阶段："><a href="#2-顶点处理阶段：" class="headerlink" title="2.顶点处理阶段："></a><strong>2.顶点处理阶段：</strong></h2><h4 id="2-1-顶点着色器"><a href="#2-1-顶点着色器" class="headerlink" title="2.1 顶点着色器"></a>2.1 顶点着色器</h4><p>顶点着色器 (Vertex Shader , VS ) 是d3d渲染管线上第一个可编程的着色器</p>
+<p>输入装配阶段组装完图元后 , 这些图元的顶点都要经过顶点着色器的处理<br>顶点着色器每次读取一个顶点 , 并输出一个顶点. 在这个过程中 , 可以对顶点进行<strong>位移, 缩放, 光照, 为纹理和材质替换贴图</strong>.</p>
+<p>即使不需要对顶点做<strong>任何</strong>处理, 也<strong>必须</strong>实现顶点着色器. </p>
+<pre class=" language-cpp"><code class="language-cpp">float4 <span class="token function">VS</span><span class="token punctuation">(</span>float4 inPos <span class="token operator">:</span> POSITION<span class="token punctuation">)</span> <span class="token operator">:</span> SV_POSITION
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> inPos<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>最简单的顶点着色器, 它不做任何操作, 只将顶点数据直接送往下一个阶段.</p>
+<h4 id="2-2-外壳着色器-待填坑"><a href="#2-2-外壳着色器-待填坑" class="headerlink" title="2.2 外壳着色器(待填坑)"></a>2.2 外壳着色器(待填坑)</h4><h4 id="2-3-细分着色阶段-待填坑"><a href="#2-3-细分着色阶段-待填坑" class="headerlink" title="2.3 细分着色阶段(待填坑)"></a>2.3 细分着色阶段(待填坑)</h4><h4 id="2-4-域着色器-待填坑"><a href="#2-4-域着色器-待填坑" class="headerlink" title="2.4 域着色器(待填坑)"></a>2.4 域着色器(待填坑)</h4><h4 id="2-5-几何着色器-待填坑"><a href="#2-5-几何着色器-待填坑" class="headerlink" title="2.5 几何着色器(待填坑)"></a>2.5 几何着色器(待填坑)</h4><h4 id="2-6-流输出阶段-待填坑"><a href="#2-6-流输出阶段-待填坑" class="headerlink" title="2.6 流输出阶段(待填坑)"></a>2.6 流输出阶段(待填坑)</h4><h2 id="3-光栅化阶段-待填坑"><a href="#3-光栅化阶段-待填坑" class="headerlink" title="3. 光栅化阶段(待填坑)"></a>3. 光栅化阶段(待填坑)</h2><h2 id="4-像素着色阶段-待填坑"><a href="#4-像素着色阶段-待填坑" class="headerlink" title="4. 像素着色阶段(待填坑)"></a>4. 像素着色阶段(待填坑)</h2><p>参考资料:</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://www.freesion.com/article/7731907586/">D3D管线以及着色器工作原理-画一个三角形</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/79183044">细说图形学渲染管线</a></li>
+</ol>
 
                 
             </div>
