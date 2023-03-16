@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="爬取mooc课程, Morpho The Rain">
+    <meta name="keywords" content="基于OpenCV-C++的n维波函数坍缩算法的实现, Morpho The Rain">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>爬取mooc课程 | Morpho The Rain</title>
+    <title>基于OpenCV-C++的n维波函数坍缩算法的实现 | Morpho The Rain</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">爬取mooc课程</h1>
+                    <h1 class="description center-align post-title">基于OpenCV-C++的n维波函数坍缩算法的实现</h1>
                 </div>
             </div>
         </div>
@@ -431,14 +431,31 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%88%AC%E8%99%AB/">
-                                <span class="chip bg-color">爬虫</span>
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
+                                <span class="chip bg-color">计算机图形学</span>
+                            </a>
+                        
+                            <a href="/tags/OpenCV/">
+                                <span class="chip bg-color">OpenCV</span>
+                            </a>
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%A0%94%E7%A9%B6/" class="post-category">
+                                研究
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -447,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-03-15
+                    2023-03-16
                 </div>
                 
 
@@ -468,64 +485,37 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>测试代码如下</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
-<span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
-url<span class="token operator">=</span><span class="token string">'https://www.icourse163.org/channel/2001.htm'</span>
-
-headers<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">'user-agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'</span><span class="token punctuation">,</span><span class="token string">'cookie'</span><span class="token punctuation">:</span><span class="token string">'EDUWEBDEVICE=e3482c970bd946788fdf483d4ab9e30c; WM_TID=x0%2BN2esCvetAEBBUUAbUN2KavOhqDfWC; __yadk_uid=VZPexZY3Yjzj0OQQuIMYPpbk5gO1V1gT; hb_MA-A976-948FFA05E931_source=cn.bing.com; WM_NI=Fg4ObgviBfr0W7q5JD%2Bpd0idvjoSJy7i54T06MFqprUVn1EvnsJdw%2FJl6wtrmTq%2F9aimy3o0%2BZKBZ5umol9tA8HaIw3bP0M551Bl4zZiEFsfh2xwHSg7cSF0rXuC6rHlZmo%3D; WM_NIKE=9ca17ae2e6ffcda170e2e6eea6ed47ac8aa5d4d83aa3eb8ab7d14a978a8fb0d86a8dbebbb3c27ea7b489d2d22af0fea7c3b92a86b9fcb0e16db6b78e87f13c95e9bfd6c950e9b0acd1ec70b6b6a1b4c973f5b7fbd5d73cf6938a92f37a978aa2d2c87eaead8685f6258ab4fa98f77aaf8cbfd0bc6babb3b7d4ee3ce98685a3d93fb7b3a18dbc8083e88882cc7df1bea0d1d03ff7ef8e8db7729ab78ba7f26eaceeb898cb59a5e9adb4c53cb288bba4b57a8cb4968eee37e2a3; MOOC_PRIVACY_INFO_APPROVED=true; NTESSTUDYSI=f7c6f5a08dd94c4bbd2ba1aced7fb3ca; utm="eyJjIjoiIiwiY3QiOiIiLCJpIjoiIiwibSI6IiIsInMiOiIiLCJ0IjoiIn0=|aHR0cHM6Ly9jbi5iaW5nLmNvbS8="; Hm_lvt_77dc9a9d49448cf5e629e5bebaa5500b=1678779070,1678839599; Hm_lpvt_77dc9a9d49448cf5e629e5bebaa5500b=1678839602'</span><span class="token punctuation">}</span>
-
-resp<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
-resp<span class="token punctuation">.</span>encoding<span class="token operator">=</span><span class="token string">'utf_8'</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>resp<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>
-titel<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-uni<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-i<span class="token operator">=</span><span class="token number">1</span>
-
-sel<span class="token operator">=</span>etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>resp<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+                <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/542605872">2维波函数坍缩算法</a><br><a target="_blank" rel="noopener" href="http://chanpinxue.cn/archives/5357.html">openCV环境搭建</a><br><a target="_blank" rel="noopener" href="http://cr31.co.uk/stagecast/wang/tiles_e.html">素材来源</a></p>
+<h2 id="一-论文复现"><a href="#一-论文复现" class="headerlink" title="一 ,  论文复现"></a>一 ,  论文复现</h2><h4 id="1-截取图像的一小块区域"><a href="#1-截取图像的一小块区域" class="headerlink" title="1. 截取图像的一小块区域"></a>1. 截取图像的一小块区域</h4><pre class=" language-cpp"><code class="language-cpp">Mat src <span class="token operator">=</span> <span class="token function">imread</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+Mat s <span class="token operator">=</span> <span class="token function">src</span><span class="token punctuation">(</span><span class="token function">Range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">//截取(0,0)到(31,31)的矩形区域</span>
+Mat ans <span class="token operator">=</span> Mat<span class="token operator">::</span><span class="token function">zeros</span><span class="token punctuation">(</span><span class="token function">Size</span><span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">,</span><span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">,</span>src<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<p>很容易就爬到了网站源代码</p>
-<img src="/2023/03/15/%E7%88%AC%E5%8F%96mooc%E8%AF%BE%E7%A8%8B/mooc.png" class="" title="mooc">
+<img src="/2023/03/16/%E5%9F%BA%E4%BA%8EOpenCV-C-%E7%9A%84n%E7%BB%B4%E6%B3%A2%E5%87%BD%E6%95%B0%E5%9D%8D%E7%BC%A9%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/1.png" class="" title="左边是截取的图像">
 
-
-<p>但是找了很久都没有找到需要提取的数据<br>仔细查看课程列表页面的源代码的时候才发现原来MOOC上面的课程列表信息是通过js加载的数据，js需要浏览器才能加载<br>selenium便是一个无头浏览器。它俩的结合便可以达到更好的数据采集效率。不过在python中需要安装下selenium</p>
-<p>安装 selenium</p>
-<pre><code>pip3 install selenium
+<h4 id="2-重复操作-截出所有图块"><a href="#2-重复操作-截出所有图块" class="headerlink" title="2. 重复操作,截出所有图块"></a>2. 重复操作,截出所有图块</h4><pre class=" language-cpp"><code class="language-cpp">vector<span class="token operator">&lt;</span>Mat<span class="token operator">></span> elements<span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">4</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Mat s <span class="token operator">=</span> <span class="token function">src</span><span class="token punctuation">(</span><span class="token function">Range</span><span class="token punctuation">(</span>i <span class="token operator">*</span> <span class="token number">32</span><span class="token punctuation">,</span> i <span class="token operator">*</span> <span class="token number">32</span> <span class="token operator">+</span> <span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Range</span><span class="token punctuation">(</span>j <span class="token operator">*</span> <span class="token number">32</span><span class="token punctuation">,</span> j <span class="token operator">*</span> <span class="token number">32</span> <span class="token operator">+</span> <span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            elements<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 </code></pre>
-<p>安装chrome浏览器(如果没有的话)<br><a target="_blank" rel="noopener" href="https://www.google.cn/intl/zh-CN/chrome/">https://www.google.cn/intl/zh-CN/chrome/</a></p>
-<p>安装好之后就可以直接使用了</p>
-<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># -*- coding: UTF-8 -*-</span>
-<span class="token keyword">from</span> lxml <span class="token keyword">import</span> etree
-url<span class="token operator">=</span><span class="token string">'https://www.icourse163.org/channel/2001.htm'</span>
+<img src="/2023/03/16/%E5%9F%BA%E4%BA%8EOpenCV-C-%E7%9A%84n%E7%BB%B4%E6%B3%A2%E5%87%BD%E6%95%B0%E5%9D%8D%E7%BC%A9%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/2.png" class="" title="一共16个图块">
 
-<span class="token keyword">from</span> selenium <span class="token keyword">import</span> webdriver
-
-driver <span class="token operator">=</span> webdriver<span class="token punctuation">.</span>Chrome<span class="token punctuation">(</span><span class="token punctuation">)</span>
-driver<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
-
-titel<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-uni<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-i <span class="token operator">=</span> <span class="token number">1</span>
-
-text <span class="token operator">=</span> str<span class="token punctuation">(</span>driver<span class="token punctuation">.</span>page_source<span class="token punctuation">)</span>
-
-sel<span class="token operator">=</span>etree<span class="token punctuation">.</span>HTML<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
-li_list<span class="token operator">=</span>sel<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'/html/body/div[4]/div[2]/div/div/div/div[2]/div[2]/div/div/div[2]/div[1]/div'</span><span class="token punctuation">)</span>
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>li_list<span class="token punctuation">.</span>__len__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">for</span> li <span class="token keyword">in</span> li_list<span class="token punctuation">:</span>
-    new_titel<span class="token operator">=</span>li<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'div/div[3]/div[1]/h3/text()'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    new_uni<span class="token operator">=</span>li<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'div/div[3]/div[1]/p/text()'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第'</span><span class="token operator">+</span>str<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'个慕课标题:'</span><span class="token operator">+</span>new_titel<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第'</span><span class="token operator">+</span>str<span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">'个慕课大学:'</span><span class="token operator">+</span>new_uni<span class="token punctuation">)</span>
-    titel<span class="token punctuation">.</span>append<span class="token punctuation">(</span>new_titel<span class="token punctuation">)</span>
-    uni<span class="token punctuation">.</span>append<span class="token punctuation">(</span>new_uni<span class="token punctuation">)</span>    
-    i<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span>
+<h4 id="3-拷贝一个图块到输出"><a href="#3-拷贝一个图块到输出" class="headerlink" title="3. 拷贝一个图块到输出"></a>3. 拷贝一个图块到输出</h4><pre class=" language-cpp"><code class="language-cpp">cv<span class="token operator">::</span>Rect <span class="token function">int2Rects</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> cv<span class="token operator">::</span><span class="token function">Rect</span><span class="token punctuation">(</span>x <span class="token operator">*</span> <span class="token number">32</span><span class="token punctuation">,</span> y <span class="token operator">*</span> <span class="token number">32</span><span class="token punctuation">,</span>  <span class="token number">31</span><span class="token punctuation">,</span>  <span class="token number">31</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//...</span>
+   Mat ans <span class="token operator">=</span> Mat<span class="token operator">::</span><span class="token function">zeros</span><span class="token punctuation">(</span><span class="token function">Size</span><span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">,</span><span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">,</span>src<span class="token punctuation">.</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   elements<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">copyTo</span><span class="token punctuation">(</span><span class="token function">ans</span><span class="token punctuation">(</span><span class="token function">int2Rects</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">imshow</span><span class="token punctuation">(</span><span class="token string">"input2"</span><span class="token punctuation">,</span> ans<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
-<p>现在源代码中就有了课程列表的信息</p>
-<img src="/2023/03/15/%E7%88%AC%E5%8F%96mooc%E8%AF%BE%E7%A8%8B/mooc2.png" class="" title="课程列表">
-
-
+<img src="/2023/03/16/%E5%9F%BA%E4%BA%8EOpenCV-C-%E7%9A%84n%E7%BB%B4%E6%B3%A2%E5%87%BD%E6%95%B0%E5%9D%8D%E7%BC%A9%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/3.png" class="" title="一共16个图块">
                 
             </div>
             <hr/>
@@ -551,7 +541,7 @@ li_list<span class="token operator">=</span>sel<span class="token punctuation">.
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://morphotherain.github.io/2023/03/15/%E7%88%AC%E5%8F%96mooc%E8%AF%BE%E7%A8%8B/">https://morphotherain.github.io/2023/03/15/%E7%88%AC%E5%8F%96mooc%E8%AF%BE%E7%A8%8B/</a>
+                    <a href="https://morphotherain.github.io/2023/03/16/%E5%9F%BA%E4%BA%8EOpenCV-C-%E7%9A%84n%E7%BB%B4%E6%B3%A2%E5%87%BD%E6%95%B0%E5%9D%8D%E7%BC%A9%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/">https://morphotherain.github.io/2023/03/16/%E5%9F%BA%E4%BA%8EOpenCV-C-%E7%9A%84n%E7%BB%B4%E6%B3%A2%E5%87%BD%E6%95%B0%E5%9D%8D%E7%BC%A9%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -589,8 +579,16 @@ li_list<span class="token operator">=</span>sel<span class="token punctuation">.
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%88%AC%E8%99%AB/">
-                                    <span class="chip bg-color">爬虫</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
+                                    <span class="chip bg-color">计算机图形学</span>
+                                </a>
+                            
+                                <a href="/tags/OpenCV/">
+                                    <span class="chip bg-color">OpenCV</span>
+                                </a>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
                                 </a>
                             
                         </div>
@@ -634,9 +632,10 @@ li_list<span class="token operator">=</span>sel<span class="token punctuation">.
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2023/03/16/%E5%9F%BA%E4%BA%8EOpenCV-C-%E7%9A%84n%E7%BB%B4%E6%B3%A2%E5%87%BD%E6%95%B0%E5%9D%8D%E7%BC%A9%E7%AE%97%E6%B3%95%E7%9A%84%E5%AE%9E%E7%8E%B0/">
                     <div class="card-image">
@@ -654,9 +653,9 @@ li_list<span class="token operator">=</span>sel<span class="token punctuation">.
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -669,6 +668,7 @@ li_list<span class="token operator">=</span>sel<span class="token punctuation">.
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -695,13 +695,13 @@ li_list<span class="token operator">=</span>sel<span class="token punctuation">.
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/14/%E8%B5%84%E6%BA%90%E5%BA%93/">
+                <a href="/2023/03/15/%E7%88%AC%E5%8F%96mooc%E8%AF%BE%E7%A8%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="资源库">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="爬取mooc课程">
                         
-                        <span class="card-title">资源库</span>
+                        <span class="card-title">爬取mooc课程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -712,7 +712,7 @@ li_list<span class="token operator">=</span>sel<span class="token punctuation">.
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-15
                             </span>
                         <span class="publish-author">
                             
@@ -725,8 +725,8 @@ li_list<span class="token operator">=</span>sel<span class="token punctuation">.
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%B5%84%E6%BA%90%E5%BA%93/">
-                        <span class="chip bg-color">资源库</span>
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
                     </a>
                     
                 </div>
