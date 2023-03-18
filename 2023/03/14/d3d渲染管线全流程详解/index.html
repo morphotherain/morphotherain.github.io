@@ -539,7 +539,8 @@ m_pd3dImmediateContext<span class="token operator">-</span><span class="token op
     m_pd3dImmediateContext<span class="token operator">-</span><span class="token operator">></span><span class="token function">PSSetShader</span><span class="token punctuation">(</span>m_pPixelShader<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token keyword">nullptr</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 <h2 id="2-顶点处理阶段："><a href="#2-顶点处理阶段：" class="headerlink" title="2.顶点处理阶段："></a><strong>2.顶点处理阶段：</strong></h2><h4 id="2-1-顶点着色器"><a href="#2-1-顶点着色器" class="headerlink" title="2.1 顶点着色器"></a>2.1 顶点着色器</h4><p>顶点着色器 (Vertex Shader , VS ) 是d3d渲染管线上第一个可编程的着色器</p>
-<p>输入装配阶段组装完图元后 , 这些图元的顶点都要经过顶点着色器的处理<br>顶点着色器每次读取一个顶点 , 并输出一个顶点. 在这个过程中 , 可以对顶点进行<strong>位移, 缩放, 光照, 为纹理和材质替换贴图</strong>.</p>
+<p>输入装配阶段组装完图元后 , 这些图元的顶点都要经过顶点着色器的处理</p>
+<p>顶点着色器每次读取一个顶点 , 并输出一个顶点. 在这个过程中 , 可以对顶点进行<strong>位移, 缩放 (坐标变换) ,  光照, 为纹理和材质替换贴图</strong>. (顶点着色)</p>
 <p>即使不需要对顶点做<strong>任何</strong>处理, 也<strong>必须</strong>实现顶点着色器. </p>
 <pre class=" language-cpp"><code class="language-cpp">float4 <span class="token function">VS</span><span class="token punctuation">(</span>float4 inPos <span class="token operator">:</span> POSITION<span class="token punctuation">)</span> <span class="token operator">:</span> SV_POSITION
 <span class="token punctuation">{</span>
@@ -547,10 +548,26 @@ m_pd3dImmediateContext<span class="token operator">-</span><span class="token op
 <span class="token punctuation">}</span>
 </code></pre>
 <p>最简单的顶点着色器, 它不做任何操作, 只将顶点数据直接送往下一个阶段.</p>
-<h4 id="2-2-外壳着色器-待填坑"><a href="#2-2-外壳着色器-待填坑" class="headerlink" title="2.2 外壳着色器(待填坑)"></a>2.2 外壳着色器(待填坑)</h4><h4 id="2-3-细分着色阶段-待填坑"><a href="#2-3-细分着色阶段-待填坑" class="headerlink" title="2.3 细分着色阶段(待填坑)"></a>2.3 细分着色阶段(待填坑)</h4><h4 id="2-4-域着色器-待填坑"><a href="#2-4-域着色器-待填坑" class="headerlink" title="2.4 域着色器(待填坑)"></a>2.4 域着色器(待填坑)</h4><h4 id="2-5-几何着色器-待填坑"><a href="#2-5-几何着色器-待填坑" class="headerlink" title="2.5 几何着色器(待填坑)"></a>2.5 几何着色器(待填坑)</h4><h4 id="2-6-流输出阶段-待填坑"><a href="#2-6-流输出阶段-待填坑" class="headerlink" title="2.6 流输出阶段(待填坑)"></a>2.6 流输出阶段(待填坑)</h4><h2 id="3-光栅化阶段-待填坑"><a href="#3-光栅化阶段-待填坑" class="headerlink" title="3. 光栅化阶段(待填坑)"></a>3. 光栅化阶段(待填坑)</h2><h2 id="4-像素着色阶段-待填坑"><a href="#4-像素着色阶段-待填坑" class="headerlink" title="4. 像素着色阶段(待填坑)"></a>4. 像素着色阶段(待填坑)</h2><p>参考资料:</p>
+<h6 id="2-1-1-坐标变换"><a href="#2-1-1-坐标变换" class="headerlink" title="2.1.1 坐标变换"></a>2.1.1 坐标变换</h6><p>顶点原始的坐标数据一般是在模型空间内的<strong>局部坐标</strong> ,所以首先要乘以模型矩阵把局部坐标变换为<strong>世界坐标</strong>,<br>世界坐标再乘以摄像机的观察矩阵得到<strong>观察坐标</strong><br>观察坐标再乘以投影矩阵变换到<strong>裁剪坐标</strong><br>裁剪坐标经过透视除法得到<strong>标准设备空间(NDC)坐标</strong><br>NDC坐标通过视口变换得到<strong>窗口坐标</strong>才是最终显示在屏幕上的坐标.</p>
+<h6 id="2-1-2-顶点着色-待填坑"><a href="#2-1-2-顶点着色-待填坑" class="headerlink" title="2.1.2 顶点着色(待填坑)"></a>2.1.2 顶点着色(待填坑)</h6><h4 id="2-2-外壳着色器"><a href="#2-2-外壳着色器" class="headerlink" title="2.2 外壳着色器"></a>2.2 外壳着色器</h4><p>外壳着色器是一个可编程着色器, 它分为两种: 常量外壳着色器和控制点外壳着色器. </p>
+<p>同时, 外壳着色器也是曲面细分三个阶段中的第一个阶段. 如果使用曲面细分技术, 必须实现所有的三个阶段</p>
+<p>作用:</p>
+<ol>
+<li>LOD(细节级别): 可以根据顶点与摄像机的远近来决定细分的程度. 距离摄像机较远的几何体将生成更少的顶点来提高性能</li>
+<li>物理模拟与动画特效: 对顶点进行物理模拟非常消耗性能, 因此我们使用尽可能少的顶点进行物理模拟, 然后在外壳着色器中补充顶点以增加细节</li>
+<li>节约内存: 我们不需要在内存中存放大量顶点数据, 可以根据需要进行细化</li>
+</ol>
+<h4 id="2-3-镶嵌器-待填坑"><a href="#2-3-镶嵌器-待填坑" class="headerlink" title="2.3 镶嵌器(待填坑)"></a>2.3 镶嵌器(待填坑)</h4><h4 id="2-4-域着色器"><a href="#2-4-域着色器" class="headerlink" title="2.4 域着色器"></a>2.4 域着色器</h4><p>镶嵌器阶段会输出新建的所有顶点与三角形, 在此阶段创建的所有顶点都会逐一调用域着色器进行后续处理. 因此域着色器相当于顶点着色器.</p>
+<p>域着色器的输入是常量外壳着色器输出的曲面细分因子, 控制点外壳着色器输出的每个面片控制点. 镶嵌化处理后的顶点位置. (注意这并不是镶嵌顶点的实际位置,而是这些点在面片域内的参数坐标) </p>
+<h4 id="2-5-几何着色器"><a href="#2-5-几何着色器" class="headerlink" title="2.5 几何着色器"></a>2.5 几何着色器</h4><p>如果不启用曲面细分环节. 几何着色器在渲染管线上的位置是<strong>顶点着色器</strong>与<strong>像素着色器</strong>之间.<br>几何着色器的输入是完整的图元. 输出是齐次裁剪空间中由一系列顶点所定义的多个图元.</p>
+<p>几何着色器的特点是可以创建或销毁几何图形. 比如将一个图元扩展为一个或更多其他类型的图元, 例如将一个点扩展成一个四边形(也就是两个三角形). </p>
+<p>这使得几何着色器很适合实现公告板技术.</p>
+<h4 id="2-6-流输出阶段-待填坑"><a href="#2-6-流输出阶段-待填坑" class="headerlink" title="2.6 流输出阶段(待填坑)"></a>2.6 流输出阶段(待填坑)</h4><h2 id="3-光栅化阶段-待填坑"><a href="#3-光栅化阶段-待填坑" class="headerlink" title="3. 光栅化阶段(待填坑)"></a>3. 光栅化阶段(待填坑)</h2><h2 id="4-像素着色阶段-待填坑"><a href="#4-像素着色阶段-待填坑" class="headerlink" title="4. 像素着色阶段(待填坑)"></a>4. 像素着色阶段(待填坑)</h2><p>参考资料:</p>
 <ol>
 <li><a target="_blank" rel="noopener" href="https://www.freesion.com/article/7731907586/">D3D管线以及着色器工作原理-画一个三角形</a></li>
 <li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/79183044">细说图形学渲染管线</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/537008519">DirectX12 3D游戏开发实战》第十二章 ：几何着色器 Geometry Shader</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/Ray1024"># Direct3D11学习：（六）渲染管线</a></li>
 </ol>
 
                 
