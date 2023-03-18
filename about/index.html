@@ -346,9 +346,7 @@
 
 
 <script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
 </script>
 
 
@@ -364,7 +362,7 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">7</a></span>
+    <span class="count"><a href="/">8</a></span>
     <span class="name">Posts</span>
 </div>
 
@@ -378,7 +376,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">8</a></span>
+    <span class="count"><a href="/tags">9</a></span>
     <span class="name">Tags</span>
 </div>
 
@@ -394,7 +392,7 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">7</a></span>
+    <span class="count"><a href="/">8</a></span>
     <span class="name">Posts</span>
 </div>
 
@@ -408,7 +406,7 @@
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">8</a></span>
+    <span class="count"><a href="/tags">9</a></span>
     <span class="name">Tags</span>
 </div>
 
@@ -552,7 +550,7 @@
                 name: 'Number of posts',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,7],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,8],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -594,7 +592,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"学习笔记","value":1},{"name":"研究","value":1},{"name":"随想","value":1},{"name":"OI竞赛","value":1}],
+                data: [{"name":"学习笔记","value":2},{"name":"研究","value":1},{"name":"随想","value":1},{"name":"OI竞赛","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -618,7 +616,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["计算机图形学","DirectX","OpenCV","C++","爬虫","leetcode","周赛","资源库"]
+                data: ["计算机图形学","DirectX","OpenCV","C++","爬虫","leetcode","周赛","资源库","算法"]
             }
         ],
         yAxis: [
@@ -631,7 +629,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [2,1,1,1,1,1,1,1],
+                data: [2,1,1,1,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -845,6 +843,12 @@
             
             <a href="/tags/%E8%B5%84%E6%BA%90%E5%BA%93/">
                 <span class="chip center-align waves-effect waves-light chip-default">资源库</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                <span class="chip center-align waves-effect waves-light chip-default">算法</span>
             </a>
             
             
