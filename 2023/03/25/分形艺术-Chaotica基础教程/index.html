@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Morpho The Rain">
+    <meta name="keywords" content="分形艺术-Chaotica基础教程, Morpho The Rain">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Morpho The Rain</title>
+    <title>分形艺术-Chaotica基础教程 | Morpho The Rain</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -307,278 +307,553 @@
 </header>
 
     
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                灵魂的漂泊永远无法停止
-                
-            </div>
 
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: ['如果累了，便停下来歇会吧','Never really desperate, only the lost of the soul'],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
-                    });
-                </script>
-                
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/%E5%88%86%E5%BD%A2.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">分形艺术-Chaotica基础教程</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/0.jpg)');
-</script>
 
 
-    </div>
-</div>
-
-
-<main class="content">
+<main class="post-container content">
 
     
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
 
-    
+    #articleContent :focus {
+        outline: none;
+    }
 
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/03/14/%E8%B5%84%E6%BA%90%E5%BA%93/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="资源库">
-                            
-                            <span class="card-title">资源库</span>
-                        </div>
-                    </a>
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                在线资料300种数据可视化案例
-美国数学学会批准的教科书
-Java 学习 + 面试指南
-IT平价学习平台
-如何使用github
-设计模式
-像素图片任天堂前艺术总监前田隆史，提供大量像素图片，有分类和搜索，可以免费下载使用。
-编程字体这个网站
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                morphotherain
-                                
-                            </span>
-                        </div>
-                    </div>
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
 
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
                     
-                    <div class="card-action article-tags">
+                    <div class="article-tag">
                         
-                        <a href="/tags/%E8%B5%84%E6%BA%90%E5%BA%93/">
-                            <span class="chip bg-color">资源库</span>
-                        </a>
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
+                                <span class="chip bg-color">计算机图形学</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%88%86%E5%BD%A2/">
+                                <span class="chip bg-color">分形</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                学习笔记
+                            </a>
                         
                     </div>
                     
                 </div>
             </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2023-03-25
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>分形创作唯一指定软件→ chaotica (文末附下载链接)</p>
+<span id="more"></span>
+
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/1.png" class="" title="官方示例">
+
+<p>螺旋上升的阶梯和历史</p>
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/2.png" class="" title="官方示例">
+
+<p>在无限的平行宇宙中跌落</p>
+<p>chaotica中有两种生成分形的方式<br>第一种是随机生成</p>
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/9.png" class="" title="软件界面">
+
+<p>左边栏从上至下依次是名称, 渲染设定, 随机生成器, OpenCL设置<br>我们只需要关注随机生成器(Random world generator)</p>
+<p>单击第一个按钮就可以生成图片<br>Number的数值是单击New random worlds时 , 随机生成图片的数量</p>
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/3.png" class="" title="生成的图片">
+
+<p>生成图片后, 单击选择一张, 渲染会自动开始</p>
+<p>下面的Min iterators和Max iterators决定了构成分形的规则的数量<br>这两个值越大, 生成的图片就越复杂</p>
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/4.png" class="" title="iterator&#x3D;2">
+
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/5.png" class="" title="iterator&#x3D;10">
+
+
+<p>Partial randomisation中有四个按钮, 分别控制四种随机因素</p>
+<p>Palette是随机颜色, 单击可以在图案不变的情况下随机更换颜色<br>    Colour nodes是颜色的数量. 这个数字越大颜色就丰富</p>
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/6.png" class="" title="随机颜色">
+
+<p>Transforms是随机变换, 可以随机更换分形图案</p>
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/7.png" class="" title="随机变换">
+
+<p>Shader是随机渲染方式, 可以在配色和图案都不变的情况下随机改变颜色分布</p>
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/8.png" class="" title="随机渲染">
+
+<p>Selectors一般用不到, 可以试着玩一下&gt;_&lt;</p>
+<p>右边栏从上到下是亮度, 伽马值, 高光强度, 饱和度, 看不懂<br>更改这几个值并不会重新渲染图片</p>
+<p>下面的是颜色曲线和背景颜色.</p>
+<p>第二个生成图片的方式是按ctrl+E打开世界编辑器, 直接添加和调整iterators<br>(对于随机生成的图片也可以在这里调整iterators)</p>
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/10.png" class="" title="世界编辑器">
+
+<p>在这里导出图片</p>
+<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/12.png" class="" title="世界编辑器">
+
+<p>如果需要透明底的话需要勾选Save alpha channel</p>
+<h4 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h4><p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Y7covmMahji2XovfYLBNng?pwd=9961">https://pan.baidu.com/s/1Y7covmMahji2XovfYLBNng?pwd=9961</a><br>提取码：9961</p>
+<p>使用方法:<br>双击msi文件安装, 解压Crack, 把文件拷贝并替换到软件的安装目录.</p>
+<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ECkJuwjn8jXWv8EJ0QOK3Q?pwd=9961">https://pan.baidu.com/s/1ECkJuwjn8jXWv8EJ0QOK3Q?pwd=9961</a> </p>
+
+                
+            </div>
+            <hr/>
+
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/03/14/d3d%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF%E5%85%A8%E6%B5%81%E7%A8%8B%E8%AF%A6%E8%A7%A3/">
-                        <div class="card-image">
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">morphotherain</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://morphotherain.github.io/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">https://morphotherain.github.io/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">morphotherain</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
                             
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
+                                    <span class="chip bg-color">计算机图形学</span>
+                                </a>
                             
-                            <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="d3d渲染管线全流程详解">
+                                <a href="/tags/%E5%88%86%E5%BD%A2/">
+                                    <span class="chip bg-color">分形</span>
+                                </a>
                             
-                            <span class="card-title">d3d渲染管线全流程详解</span>
                         </div>
-                    </a>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
 
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                0. 渲染管线概述Direct3D的渲染管线由一系列阶段组成. 整个渲染管线需要读取顶点数据,并经过一系列的操作输出最终画面.渲染流程主要分为几个大的阶段：输入装配阶段，顶点处理阶段，光栅操作阶段，像素着色阶段
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
 
+    
 
-1. 输入装配阶段这是一
-                            
-                        </div>
-                        <div class="publish-info">
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/%E5%88%86%E5%BD%A2.png" class="responsive-img" alt="分形艺术-Chaotica基础教程">
+                        
+                        <span class="card-title">分形艺术-Chaotica基础教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            分形创作唯一指定软件→ chaotica (文末附下载链接)
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-25
                             </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
                                     学习笔记
                                 </a>
-                                
-                                
-                            </span>
-                        </div>
+                            
+                            
+                        </span>
                     </div>
+                </div>
 
+                
+                <div class="card-action article-tags">
                     
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/DirectX/">
-                            <span class="chip bg-color">DirectX</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
-                            <span class="chip bg-color">计算机图形学</span>
-                        </a>
-                        
-                    </div>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
+                        <span class="chip bg-color">计算机图形学</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%86%E5%BD%A2/">
+                        <span class="chip bg-color">分形</span>
+                    </a>
                     
                 </div>
+                
             </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/03/14/%E7%AC%AC336%E5%9C%BA%E5%91%A8%E8%B5%9B/">
-                        <div class="card-image">
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/03/24/%E8%8D%89%E8%8E%93%E6%85%95%E6%96%AF%E6%94%BB%E7%95%A5/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/5123.png" class="responsive-img" alt="在宿舍做什么?——草莓慕斯攻略">
+                        
+                        <span class="card-title">在宿舍做什么?——草莓慕斯攻略</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
                             
-                            
-                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="336场周赛复盘">
-                            
-                            <span class="card-title">336场周赛复盘</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                题目整体难度不是很大,但是刷掉了很多自认为稳出三题的选手(包括我qwq)T1,T2比较水,主要靠手速. T3的思路不太好想,但是一旦想通之后实现很简单T4据说是21年的原题,我没刷到过,看了眼没思路就弃了.
-
-
-T1 统计字符串2586. 
-                            
-                        </div>
-                        <div class="publish-info">
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-24
                             </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/OI%E7%AB%9E%E8%B5%9B/" class="post-category">
-                                    OI竞赛
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%94%9C%E7%82%B9/" class="post-category">
+                                    甜点
                                 </a>
-                                
-                                
-                            </span>
-                        </div>
+                            
+                            
+                        </span>
                     </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/leetcode/">
-                            <span class="chip bg-color">leetcode</span>
-                        </a>
-                        
-                        <a href="/tags/%E5%91%A8%E8%B5%9B/">
-                            <span class="chip bg-color">周赛</span>
-                        </a>
-                        
-                    </div>
-                    
                 </div>
+                
             </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2023/03/14/%E6%B2%99%E7%9B%92/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="沙盒">
-                            
-                            <span class="card-title">沙盒</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                在这里进行功能测试和模板开发(๑•̀ㅂ•́) ✧
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                morphotherain
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
         </div>
-    </article>
+        
+    </div>
+</article>
 
-</main>
+</div>
 
 
-<div class="container paging">
-    <div class="row">
-        <div class="col s6 m4 l4">
-            
-            <a href="/"
-               class="left btn-floating btn-large waves-effect waves-light bg-color">
-                <i class="fas fa-angle-left"></i>
-            </a>
-            
-        </div>
-        <div class="page-info col m4 l4 hide-on-small-only">
-            <div class="center-align b-text-gray">2 / 2</div>
-        </div>
-        <div class="col s6 m4 l4">
-            
-            <a class="right btn-floating btn-large disabled">
-                <i class="fas fa-angle-right"></i>
-            </a>
-            
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
         </div>
     </div>
 </div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
 
 
 
