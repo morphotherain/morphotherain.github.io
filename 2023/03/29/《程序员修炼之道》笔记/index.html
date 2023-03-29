@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分形艺术-Chaotica基础教程, Morpho The Rain">
+    <meta name="keywords" content="《程序员修炼之道》笔记, Morpho The Rain">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分形艺术-Chaotica基础教程 | Morpho The Rain</title>
+    <title>《程序员修炼之道》笔记 | Morpho The Rain</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/%E5%88%86%E5%BD%A2.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">分形艺术-Chaotica基础教程</h1>
+                    <h1 class="description center-align post-title">《程序员修炼之道》笔记</h1>
                 </div>
             </div>
         </div>
@@ -429,17 +429,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
-                                <span class="chip bg-color">计算机图形学</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%88%86%E5%BD%A2/">
-                                <span class="chip bg-color">分形</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -447,8 +439,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
-                                学习笔记
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                读书笔记
                             </a>
                         
                     </div>
@@ -460,7 +452,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-03-25
+                    2023-03-29
                 </div>
                 
 
@@ -481,53 +473,63 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>分形创作唯一指定软件→ chaotica (文末附下载链接)</p>
-<span id="more"></span>
-
-<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/1.png" class="" title="官方示例">
-
-<p>螺旋上升的阶梯和历史</p>
-<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/2.png" class="" title="官方示例">
-
-<p>在无限的平行宇宙中跌落</p>
-<hr>
-<h4 id="chaotica中有两种生成分形的方式"><a href="#chaotica中有两种生成分形的方式" class="headerlink" title="chaotica中有两种生成分形的方式"></a>chaotica中有两种生成分形的方式</h4><h4 id="第一种是随机生成"><a href="#第一种是随机生成" class="headerlink" title="第一种是随机生成"></a>第一种是随机生成</h4><img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/9.png" class="" title="软件界面">
-
-<p>左边栏从上至下依次是名称, 渲染设定, 随机生成器, OpenCL设置<br>我们只需要关注随机生成器(Random world generator)</p>
-<p>单击第一个按钮就可以生成图片<br>Number的数值是单击New random worlds时 , 随机生成图片的数量</p>
-<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/3.png" class="" title="生成的图片">
-
-<p>生成图片后, 单击选择一张, 渲染会自动开始</p>
-<p>下面的Min iterators和Max iterators决定了构成分形的规则的数量<br>这两个值越大, 生成的图片就越复杂</p>
-<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/4.png" class="" title="iterator&#x3D;2">
-
-<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/5.png" class="" title="iterator&#x3D;10">
-
-
-<p>Partial randomisation中有四个按钮, 分别控制四种随机因素</p>
-<p>Palette是随机颜色, 单击可以在图案不变的情况下随机更换颜色<br>    Colour nodes是颜色的数量. 这个数字越大颜色就丰富</p>
-<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/6.png" class="" title="随机颜色">
-
-<p>Transforms是随机变换, 可以随机更换分形图案</p>
-<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/7.png" class="" title="随机变换">
-
-<p>Shader是随机渲染方式, 可以在配色和图案都不变的情况下随机改变颜色分布</p>
-<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/8.png" class="" title="随机渲染">
-
-<p>Selectors一般用不到, 可以试着玩一下&gt;_&lt;</p>
-<p>右边栏从上到下是亮度, 伽马值, 高光强度, 饱和度, 看不懂<br>更改这几个值并不会重新渲染图片</p>
-<p>下面的是颜色曲线和背景颜色.</p>
-<h4 id="第二个生成图片的方式是按ctrl-E打开世界编辑器-直接添加和调整iterators"><a href="#第二个生成图片的方式是按ctrl-E打开世界编辑器-直接添加和调整iterators" class="headerlink" title="第二个生成图片的方式是按ctrl+E打开世界编辑器, 直接添加和调整iterators"></a>第二个生成图片的方式是按ctrl+E打开世界编辑器, 直接添加和调整iterators</h4><p>(对于随机生成的图片也可以在这里调整iterators)</p>
-<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/10.png" class="" title="世界编辑器">
-
-<p>在这里导出图片</p>
-<img src="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/12.png" class="" title="世界编辑器">
-
-<p>如果需要透明底的话需要勾选Save alpha channel</p>
-<h4 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h4><p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Y7covmMahji2XovfYLBNng?pwd=9961">https://pan.baidu.com/s/1Y7covmMahji2XovfYLBNng?pwd=9961</a><br>提取码：9961</p>
-<p>使用方法:<br>双击msi文件安装, 解压Crack, 把文件拷贝并替换到软件的安装目录.</p>
-<p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1ECkJuwjn8jXWv8EJ0QOK3Q?pwd=9961">https://pan.baidu.com/s/1ECkJuwjn8jXWv8EJ0QOK3Q?pwd=9961</a> </p>
-
+                <h1 id="第一章-注重实效的哲学"><a href="#第一章-注重实效的哲学" class="headerlink" title="第一章 注重实效的哲学"></a>第一章 注重实效的哲学</h1><h2 id="1-我的源码让猫给吃了"><a href="#1-我的源码让猫给吃了" class="headerlink" title="1.我的源码让猫给吃了"></a>1.我的源码让猫给吃了</h2><blockquote>
+<p>在所有的弱点中，最大的弱点就是害怕暴露弱点</p>
+</blockquote>
+<h4 id="负责："><a href="#负责：" class="headerlink" title="负责："></a>负责：</h4><p>分析风险是否超出了你的控制，对于风险太大或不可能做到的事情，你有权不去为之负责。<br>如果你确实<strong>同意</strong>要为某个结果负责，就应切实负起责任，并设法给出各种选择。</p>
+<h2 id="2-软件的熵"><a href="#2-软件的熵" class="headerlink" title="2.软件的熵"></a>2.软件的熵</h2><blockquote>
+<p>不要容忍破窗户</p>
+</blockquote>
+<p>不要留着破窗户（低劣的设计，决策错误，垃圾代码）不修。发现一个就修一个。<br>如果没有适当的时间进行修理，就把出问题的代码放入注释，或显示”未实现“消息。或用虚设的数据加以替代。&#x3D;&#x3D;采用某种行动防止进一步的损坏，并说明情势处在你的控制之下。</p>
+<h2 id="3-石头汤与煮青蛙"><a href="#3-石头汤与煮青蛙" class="headerlink" title="3.石头汤与煮青蛙"></a>3.石头汤与煮青蛙</h2><blockquote>
+<p>做变化的催化剂</p>
+</blockquote>
+<p>设计出你可以合理要求的东西，一旦完成，就那给大家看，然后说：”要是我们增加。。。。。会更好“，假装那并不重要。坐回椅子上，等着他们开发你本来就想要的功能。</p>
+<blockquote>
+<p>记住大图景 bigview</p>
+</blockquote>
+<p>要持续观察周围正在发生的事情。</p>
+<h2 id="4-足够好的软件"><a href="#4-足够好的软件" class="headerlink" title="4.足够好的软件"></a>4.足够好的软件</h2><blockquote>
+<p>使质量成为需求问题</p>
+</blockquote>
+<p>应该给用户以机会，让他们参与决定你制作的东西何时以足够好。<br>如果你给用户某样东西，让他们及早使用，他们的反馈往往会把你引向更好的最终解决方案。</p>
+<h2 id="5-你的知识资产"><a href="#5-你的知识资产" class="headerlink" title="5.你的知识资产"></a>5.你的知识资产</h2><h2 id="6-交流"><a href="#6-交流" class="headerlink" title="6.交流"></a>6.交流</h2><h1 id="第二章-注重实效的途径"><a href="#第二章-注重实效的途径" class="headerlink" title="第二章 注重实效的途径"></a>第二章 注重实效的途径</h1><h2 id="7-重复的危害"><a href="#7-重复的危害" class="headerlink" title="7.重复的危害"></a>7.重复的危害</h2><blockquote>
+<p>DRY原则——不要重复你自己</p>
+</blockquote>
+<h4 id="重复是怎样发生的"><a href="#重复是怎样发生的" class="headerlink" title="重复是怎样发生的"></a>重复是怎样发生的</h4><ol>
+<li>强加的重复——开发者觉得别无选择</li>
+<li>无意地重复——开发者没有意识到他在重复</li>
+<li>无耐性的重复——开发者偷懒</li>
+<li>开发者之间的重复——同一团队的几个人重复了同样的信息</li>
+</ol>
+<h4 id="强加的重复"><a href="#强加的重复" class="headerlink" title="强加的重复"></a>强加的重复</h4><p>使用一些方法来尽可能（而不是完全）避免重复：</p>
+<ol>
+<li>信息的多种表示：编写简单的元数据，过滤器，代码生成器。</li>
+<li>代码中的文档：把注释保留给高级说明而不是低级知识。</li>
+<li>文档与代码：用程序方式将文档与代码关联起来。</li>
+<li>语言问题：C和C++需要在接口规范与实现之间重复接口信息。应该在头文件中机子啊接口信息，在实现文件中记载使用者无需了解的细节信息。</li>
+</ol>
+<h4 id="无意的重复"><a href="#无意的重复" class="headerlink" title="无意的重复"></a>无意的重复</h4><p>有时重复来自设计中的错误<br>当出现互相依赖的数据元素时，最好让其中一些元素变为计算字段。<br>应为性能原因违反DRY原则时，需要确保其影响局部化，不会暴露给外界</p>
+<h4 id="无耐性的重复"><a href="#无耐性的重复" class="headerlink" title="无耐性的重复"></a>无耐性的重复</h4><blockquote>
+<p>让复用变得容易</p>
+</blockquote>
+<h4 id="开发者之间的重复"><a href="#开发者之间的重复" class="headerlink" title="开发者之间的重复"></a>开发者之间的重复</h4><p>设置论坛，用以讨论常见问题，交换意见，进行提问；让某个团队成员担任项目资料管理员，其工作时促进知识的交流。在源码树中指定一个中央区域，用于存放实用例程和脚本。一定要阅读别人的代码和文档。</p>
+<h2 id="8-正交性"><a href="#8-正交性" class="headerlink" title="8.正交性"></a>8.正交性</h2><h1 id="第五章-弯曲，或折断"><a href="#第五章-弯曲，或折断" class="headerlink" title="第五章 弯曲，或折断"></a>第五章 弯曲，或折断</h1><h2 id="27-元程序设计"><a href="#27-元程序设计" class="headerlink" title="27.元程序设计"></a>27.元程序设计</h2><blockquote>
+<p>再多的天才也无法胜过对细节的关注。</p>
+</blockquote>
+<h4 id="动态配置"><a href="#动态配置" class="headerlink" title="动态配置"></a>动态配置</h4><p>&#x3D;&#x3D;——要配置，不要集成。&#x3D;&#x3D;</p>
+<p>要用元数据描述应用的配置选项：调谐参数，用户偏好，安装目录，等等。</p>
+<h4 id="元数据驱动的应用"><a href="#元数据驱动的应用" class="headerlink" title="元数据驱动的应用"></a>元数据驱动的应用</h4><p>为一般情况编写程序，把具体情况放在别处——编译的代码库之外。<br>这种方法有若干好处：</p>
+<ol>
+<li>迫使你解除你设计的耦合，从而带来更灵活，可适应性更好的程序。</li>
+<li>迫使你推迟对细节的处理，创建更健壮，更抽象的设计。</li>
+<li>无需重新编译应用，就可以对其进行定制。可以利用这种定制，轻松绕开正在运行的重大bug</li>
+<li>与通用编程语言相比，可以通过一种更接近问题领域的方式表示元数据。</li>
+<li>可以使用相同的引擎，搭配不同的元数据，来实现不同的项目。</li>
+</ol>
+<h4 id="商业逻辑"><a href="#商业逻辑" class="headerlink" title="商业逻辑"></a>商业逻辑</h4><p>考虑某种基于规则的系统中对工作流进行编码，并嵌入到应用中。这样，你就可以通过编写规则，而不是修改代码来配置他。<br>对于不那么复杂的逻辑，可以使用小型语言加以表达，从而消除在环境变化时重新编译和重新部署的需要。</p>
+<h4 id="不要编写渡渡鸟代码"><a href="#不要编写渡渡鸟代码" class="headerlink" title="不要编写渡渡鸟代码"></a>不要编写渡渡鸟代码</h4><p>没有元数据，程序就不可能获得应有的适应性与灵活性</p>
+<h2 id="28-时间耦合"><a href="#28-时间耦合" class="headerlink" title="28.时间耦合"></a>28.时间耦合</h2>
                 
             </div>
             <hr/>
@@ -553,7 +555,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://morphotherain.github.io/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">https://morphotherain.github.io/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/</a>
+                    <a href="https://morphotherain.github.io/2023/03/29/%E3%80%8A%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93%E3%80%8B%E7%AC%94%E8%AE%B0/">https://morphotherain.github.io/2023/03/29/%E3%80%8A%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93%E3%80%8B%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -590,15 +592,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
-                                    <span class="chip bg-color">计算机图形学</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%88%86%E5%BD%A2/">
-                                    <span class="chip bg-color">分形</span>
-                                </a>
-                            
+                            <span class="chip bg-color">No tag</span>
                         </div>
                     
                 </div>
@@ -644,13 +638,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2023/03/29/%E3%80%8A%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BF%AE%E7%82%BC%E4%B9%8B%E9%81%93%E3%80%8B%E7%AC%94%E8%AE%B0/">
+                <a href="/2023/03/29/%E3%80%8A%E6%8A%80%E6%9C%AF%E5%93%B2%E5%AD%A6%E7%BB%8F%E5%85%B8%E8%AF%BB%E6%9C%AC%E3%80%8B%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="《程序员修炼之道》笔记">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="《技术哲学经典读本》笔记">
                         
-                        <span class="card-title">《程序员修炼之道》笔记</span>
+                        <span class="card-title">《技术哲学经典读本》笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -685,35 +679,47 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/24/%E8%8D%89%E8%8E%93%E6%85%95%E6%96%AF%E6%94%BB%E7%95%A5/">
+                <a href="/2023/03/25/%E5%88%86%E5%BD%A2%E8%89%BA%E6%9C%AF-Chaotica%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/">
                     <div class="card-image">
                         
-                        <img src="/medias/5123.png" class="responsive-img" alt="在宿舍做什么?——草莓慕斯攻略">
+                        <img src="/medias/%E5%88%86%E5%BD%A2.png" class="responsive-img" alt="分形艺术-Chaotica基础教程">
                         
-                        <span class="card-title">在宿舍做什么?——草莓慕斯攻略</span>
+                        <span class="card-title">分形艺术-Chaotica基础教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            分形创作唯一指定软件→ chaotica (文末附下载链接)
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%9C%E7%82%B9/" class="post-category">
-                                    甜点
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    学习笔记
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6/">
+                        <span class="chip bg-color">计算机图形学</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%86%E5%BD%A2/">
+                        <span class="chip bg-color">分形</span>
+                    </a>
+                    
                 </div>
                 
             </div>
