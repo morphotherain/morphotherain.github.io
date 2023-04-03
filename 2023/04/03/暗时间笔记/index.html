@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第339场周赛, Morpho The Rain">
+    <meta name="keywords" content="《暗时间》阅读笔记, Morpho The Rain">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第339场周赛 | Morpho The Rain</title>
+    <title>《暗时间》阅读笔记 | Morpho The Rain</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cataas.com/cat')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第339场周赛</h1>
+                    <h1 class="description center-align post-title">《暗时间》阅读笔记</h1>
                 </div>
             </div>
         </div>
@@ -429,17 +429,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/leetcode/">
-                                <span class="chip bg-color">leetcode</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%91%A8%E8%B5%9B/">
-                                <span class="chip bg-color">周赛</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -447,8 +439,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/OI%E7%AB%9E%E8%B5%9B/" class="post-category">
-                                OI竞赛
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                读书笔记
                             </a>
                         
                     </div>
@@ -460,7 +452,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-04-02
+                    2023-04-03
                 </div>
                 
 
@@ -481,140 +473,105 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>T1本来很简单的, 主要是在想事情没好好做….<br>T2T3每个题都只用了6分钟. 我的全国前500啊 qwq<br>残念残念残念</p>
-<p>正经总结: 这次的三个题总体偏向抽象思维, 没有考察太多算法的内容.<br>但是对于编码能力要求比较高</p>
-<img src="/2023/04/02/%E7%AC%AC339%E5%9C%BA%E5%91%A8%E8%B5%9B/1.png" class="" title="Rank">
+                <p>书写自己的思想是一件容易产生流体验的事情，在书写的时候，特别是理性书写的时候，大脑逐渐进入推理分析模块，一切不愉快的情绪，烦躁感都会逐渐消隐下去</p>
+<span id="more"></span>
 
-<h2 id="T1-平衡字符串"><a href="#T1-平衡字符串" class="headerlink" title="T1 平衡字符串"></a>T1 平衡字符串</h2><h4 id="6362-最长平衡子字符串"><a href="#6362-最长平衡子字符串" class="headerlink" title="6362. 最长平衡子字符串"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-longest-balanced-substring-of-a-binary-string/">6362. 最长平衡子字符串</a></h4><p>给你一个仅由 <code>0</code> 和 <code>1</code> 组成的二进制字符串 <code>s</code> 。  </p>
-<p>如果子字符串中 <strong>所有的</strong> <code>0</code> <strong>都在</strong> <code>1</code> <strong>之前</strong> 且其中 <code>0</code> 的数量等于 <code>1</code> 的数量，则认为 <code>s</code> 的这个子字符串是平衡子字符串。请注意，空子字符串也视作平衡子字符串。 </p>
-<p>返回  <code>s</code> 中最长的平衡子字符串长度。</p>
-<p>子字符串是字符串中的一个连续字符序列。</p>
-<p><strong>示例 1：</strong></p>
-<p><strong>输入</strong>：s &#x3D; “01000111”<br><strong>输出</strong>：6<br><strong>解释</strong>：最长的平衡子字符串是 “000111” ，长度为 6 。</p>
-<h3 id="解法-模拟"><a href="#解法-模拟" class="headerlink" title="解法: 模拟"></a>解法: 模拟</h3><p>T1通用解法, 没什么好说的</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">findTheLongestBalancedSubstring</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> zhan <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> maxcur<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">bool</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> cur <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>cur<span class="token operator">&lt;</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cur<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'1'</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>flag<span class="token punctuation">)</span>flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>zhan<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    zhan<span class="token operator">--</span><span class="token punctuation">;</span>
-                    maxcur<span class="token operator">++</span><span class="token punctuation">;</span>
-                    maxcur<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'0'</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    zhan <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-                    maxcur <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-                    flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                <span class="token keyword">else</span>
-                <span class="token punctuation">{</span>
-                    zhan<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>maxcur<span class="token operator">></span>max<span class="token punctuation">)</span>max<span class="token operator">=</span> maxcur<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> max<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
-<h2 id="T2-二维数组"><a href="#T2-二维数组" class="headerlink" title="T2 二维数组"></a>T2 二维数组</h2><h4 id="6363-转换二维数组"><a href="#6363-转换二维数组" class="headerlink" title="6363. 转换二维数组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-an-array-into-a-2d-array-with-conditions/">6363. 转换二维数组</a></h4><p>给你一个整数数组 <code>nums</code> 。请你创建一个满足以下条件的二维数组：</p>
+
+
+<p>快活的日子全是浪费时间，没有任何收获</p>
 <ul>
-<li>二维数组应该 <strong>只</strong> 包含数组 <code>nums</code> 中的元素。</li>
-<li>二维数组中的每一行都包含 <strong>不同</strong> 的整数。</li>
-<li>二维数组的行数应尽可能 <strong>少</strong> 。</li>
+<li>有点偏颇</li>
 </ul>
-<p>返回结果数组。如果存在多种答案，则返回其中任何一种。</p>
-<p>请注意，二维数组的每一行上可以存在不同数量的元素。</p>
-<p><strong>示例 1：</strong></p>
-<p><strong>输入</strong>：nums &#x3D; [1,3,4,1,2,3,1]<br><strong>输出</strong>：[[1,3,4,2],[1,3],[1]]<br><strong>解释</strong>：根据题目要求可以创建包含以下几行元素的二维数组：</p>
+<p>要事第一</p>
 <ul>
-<li>1,3,4,2</li>
-<li>1,3</li>
-<li>1<br>nums 中的所有元素都有用到，并且每一行都由不同的整数组成，所以这是一个符合题目要求的答案。<br>可以证明无法创建少于三行且符合题目要求的二维数组。</li>
+<li>基本的时间管理策略, 但是累积起来也有很可观的收益</li>
 </ul>
-<pre class=" language-cpp"><code class="language-cpp">vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">findMatrix</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> map<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">:</span> nums<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            map<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">:</span> nums<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            map<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">:</span> map<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>second<span class="token operator">></span>max<span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                max <span class="token operator">=</span> i<span class="token punctuation">.</span>second<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> mat<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>max<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> row<span class="token punctuation">;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span><span class="token operator">&amp;</span> i <span class="token operator">:</span> map<span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>second<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    i<span class="token punctuation">.</span>second<span class="token operator">--</span><span class="token punctuation">;</span>
-                    row<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            mat<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> mat<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
-<h3 id="解法-无序map-这也算解法吗-gt-lt"><a href="#解法-无序map-这也算解法吗-gt-lt" class="headerlink" title="解法: 无序map(这也算解法吗&gt;&lt;)"></a>解法: 无序map(这也算解法吗&gt;<em>&lt;</em>)</h3><p>找到重复次数k最多的元素, 要保证结果中每一个数组都没有重复的元素<br>则数组的个数至少为k<br>然后把剩下的元素依次放进这k个数组中, 因为它们的数量都小于等于k, 所以可证明一定能放下</p>
-<h2 id="T3-分奶酪"><a href="#T3-分奶酪" class="headerlink" title="T3 分奶酪"></a>T3 分奶酪</h2><h4 id="6364-老鼠和奶酪"><a href="#6364-老鼠和奶酪" class="headerlink" title="6364. 老鼠和奶酪"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/mice-and-cheese/">6364. 老鼠和奶酪</a></h4><p>有两只老鼠和 <code>n</code> 块不同类型的奶酪，每块奶酪都只能被其中一只老鼠吃掉。</p>
-<p>下标为 <code>i</code> 处的奶酪被吃掉的得分为：</p>
+<p>“不肯关上一扇门”（退订rss）</p>
 <ul>
-<li>如果第一只老鼠吃掉，则得分为 <code>reward1[i]</code> 。</li>
-<li>如果第二只老鼠吃掉，则得分为 <code>reward2[i]</code> 。</li>
+<li>一种心理学上的效应, 我们倾向于期待下一篇文章或者视频可能会有我们想找的东西, 而实际上这种漫无目的的做法的效费比极低. 因此最好是减少无目的浏览的时间.</li>
 </ul>
-<p>给你一个正整数数组 <code>reward1</code> ，一个正整数数组 <code>reward2</code> ，和一个非负整数 <code>k</code> 。</p>
-<p>请你返回第一只老鼠恰好吃掉 <code>k</code> 块奶酪的情况下，<strong>最大</strong> 得分为多少。</p>
-<p><strong>示例 1：</strong></p>
-<p><strong>输入</strong>：reward1 &#x3D; [1,1,3,4], reward2 &#x3D; [4,4,1,1], k &#x3D; 2<br><strong>输出</strong>：15<br><strong>解释</strong>：这个例子中，第一只老鼠吃掉第 2 和 3 块奶酪（下标从 0 开始），第二只老鼠吃掉第 0 和 1 块奶酪。<br>总得分为 4 + 4 + 3 + 4 &#x3D; 15 。<br>15 是最高得分。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">miceAndCheese</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> reward1<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> reward2<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> cha<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>reward1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> c <span class="token operator">=</span> reward1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span>reward2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            cha<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>cha<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>cha<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>reward1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            ans<span class="token operator">+</span><span class="token operator">=</span>reward2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">int</span> cur <span class="token operator">=</span> cha<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            ans <span class="token operator">+</span><span class="token operator">=</span> cha<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            cur<span class="token operator">--</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-</code></pre>
-<h3 id="解法-贪心"><a href="#解法-贪心" class="headerlink" title="解法: 贪心"></a>解法: 贪心</h3><p>首先用reward1减去reward2, 得到一个由差值构成的数组<br>差值为正时说明这块奶酪给第一只老鼠吃得分更大, 为负时说明这块奶酪给第二只老鼠吃分更大<br>将这个差值数组从小到大排序<br>首先让第二只老鼠分走所有的奶酪, 计算出得分<br>然后把差值最大的k个奶酪分给第一只. 把得分依次加上这些差值<br>可以证明最后得到的分数总是最大的</p>
+<p>制定简要的阅读计划</p>
+<ul>
+<li>可能我需要一个书单&gt;_&lt;</li>
+</ul>
+<p>大多数书的信息密度很低</p>
+<ul>
+<li>可以选择性的阅读和跳过, 把主要精力放在技术性的部分</li>
+</ul>
+<p>书读百遍其义自见（阅读时选择性忽略掉一些点导致无法理解，多读几遍就好）</p>
+<ul>
+<li>其实就是费曼学习法, 换了一种表述而已</li>
+</ul>
+<p>书评中少数意见(比如差评)往往来自真正懂行的人</p>
+<ul>
+<li>不仅仅是书评, 其他的大多数也是一样. 但并不是说发表了小众的意见就算真正懂行了, 因为说不定只是杠精</li>
+</ul>
+<p>non essential的知识采用rtm方法（read the manual）</p>
+<ul>
+<li>没有必要把所有东西都记下来, 有些知识可能在整个技术生涯中用到的次数不超过一两次, 查说明书是更合理的方法</li>
+</ul>
+<p>essential知识往往是使用极其广泛的方法</p>
+<ul>
+<li>如果缺少这种知识的话, 到使用的时候很可能不知道上哪找, 会多走很多的弯路</li>
+</ul>
+<p>学习一个小领域的目标是时时刻刻能写出漂亮的survey</p>
+<ul>
+<li>这个时候写博客就是一个很好的检验和提升自己知识组织的方式, 比思维导图的方式要更好</li>
+</ul>
+<p>…,因为这虽然不是最佳的时间投入方法，但总归比什么都不专注要强得多，是不是弯路，不是那么容易界定的</p>
+<ul>
+<li>虽然俗谚云磨刀不误砍柴功, 但是磨刀是建立在正确的方法论上的, 如果没有一个好的领路人, 放弃寻找方法立刻着手可能是更好的选择.</li>
+</ul>
+<p>如果觉得做不下去了，就硬着头皮坚持做</p>
+<ul>
+<li>让我想起了体测1000m</li>
+</ul>
+<p>只有当没有特定策略的时候，大脑才会退而求其次寻找一般性策略</p>
+<ul>
+<li>很多时候, 这种习惯反而会耽误事情, 因为不是所有问题你都能想到为什么不百度一下</li>
+</ul>
+<p>经历了失败之后，我们做正确的事情时会觉得更加理直气壮，如果没有，则很难感受到这样做的正确感</p>
+<ul>
+<li>仅仅说明了失败有其正面意义, 很多时候我们不可能去故意失败, 来获得这种”正确感”</li>
+</ul>
+<p>自我服务偏差：把失败归因于外界因素，把成功归因于自身强大</p>
+<ul>
+<li>不一定是坏事, 这种想法也能激励我们度过挫折继续努力</li>
+</ul>
+<p>默记7位数字的测试者选择巧克力蛋糕多过水果沙拉，说明大脑的高级模块过载后无法与底层模块对抗</p>
+<ul>
+<li>也就是说, 不要给自己太大压力有助于更好的做出选择?</li>
+</ul>
+<p>大脑喜欢事情往积极方向发展（泡冰水的例子）</p>
+<ul>
+<li>我认为并不是这样, 而是一种必须的仪式感在起作用, 这种仪式感的意义是在积极和消极之间建立一道缓冲带, 以此确保精神的稳定.</li>
+</ul>
+<p>理性大脑非常善于给自己做出的（即便确实不合理）的决定找到合适的理由<br>我们知道答案，但对答案推导的过程一无所知</p>
+<p>如果你习惯了思考问题，就总会有东西可写，先有思考，然后有总结，在总结中进一步思考<br>如果你逼着自己将一些不成熟的想法写下来，看着自己写的内容，试着进一步拓展他们</p>
+<ul>
+<li>坏想法只是不够好, 只是需要时间, 但是我们不总是有时间</li>
+<li>但是把不成熟的想法写下来的思路是对的, 藏着掖着的想法永远无法成为成熟的想法</li>
+</ul>
+<p>科学松鼠</p>
+<ul>
+<li>无法理解, 是科学仓鼠的意思吗o_o…….</li>
+</ul>
+<p>书写自己的思想是一件容易产生流体验的事情，在书写的时候，特别是理性书写的时候，大脑逐渐进入推理分析模块，一切不愉快的情绪，烦躁感都会逐渐消隐下去</p>
+<ul>
+<li>前提是有时间慢慢写..最近好忙……</li>
+</ul>
+<p>不要在博客上碎碎念，Twitter是碎碎念的地方</p>
+<ul>
+<li>我现在是不是就在碎碎念…., 应该把博客分成技术博客和生活博客,但是工程量太大了.</li>
+</ul>
+<ol>
+<li>绝无仅有</li>
+<li>在实践中有价值</li>
+<li>具有可持续发展性</li>
+</ol>
+<ul>
+<li>这是与技术路线无关的核心竞争力</li>
+</ul>
 
                 
             </div>
@@ -641,7 +598,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://morphotherain.github.io/2023/04/02/%E7%AC%AC339%E5%9C%BA%E5%91%A8%E8%B5%9B/">https://morphotherain.github.io/2023/04/02/%E7%AC%AC339%E5%9C%BA%E5%91%A8%E8%B5%9B/</a>
+                    <a href="https://morphotherain.github.io/2023/04/03/%E6%9A%97%E6%97%B6%E9%97%B4%E7%AC%94%E8%AE%B0/">https://morphotherain.github.io/2023/04/03/%E6%9A%97%E6%97%B6%E9%97%B4%E7%AC%94%E8%AE%B0/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -678,15 +635,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/leetcode/">
-                                    <span class="chip bg-color">leetcode</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%91%A8%E8%B5%9B/">
-                                    <span class="chip bg-color">周赛</span>
-                                </a>
-                            
+                            <span class="chip bg-color">No tag</span>
                         </div>
                     
                 </div>
@@ -728,9 +677,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2023/04/03/%E6%9A%97%E6%97%B6%E9%97%B4%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
@@ -747,48 +697,8 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    读书笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/03/29/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E5%9F%BA%E5%BB%BA-%E6%9C%AA%E6%9D%A5%E5%B8%83%E5%B1%80%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E7%BA%BF%E3%80%8B%E7%AC%94%E8%AE%B0/">
-                    <div class="card-image">
-                        
-                        <img src="/medias/f/1.png" class="responsive-img" alt="《中国新基建:未来布局与行动路线》笔记">
-                        
-                        <span class="card-title">《中国新基建:未来布局与行动路线》笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
                             </span>
                         <span class="publish-author">
                             
@@ -801,6 +711,60 @@
                             
                         </span>
                     </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/04/02/%E7%AC%AC339%E5%9C%BA%E5%91%A8%E8%B5%9B/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第339场周赛">
+                        
+                        <span class="card-title">第339场周赛</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/OI%E7%AB%9E%E8%B5%9B/" class="post-category">
+                                    OI竞赛
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%91%A8%E8%B5%9B/">
+                        <span class="chip bg-color">周赛</span>
+                    </a>
+                    
                 </div>
                 
             </div>
