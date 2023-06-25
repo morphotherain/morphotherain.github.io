@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第339场周赛, Morpho The Rain">
+    <meta name="keywords" content="2023-6-25review-后端er的Linux-Ubuntu初体验, Morpho The Rain">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第339场周赛 | Morpho The Rain</title>
+    <title>2023-6-25review-后端er的Linux-Ubuntu初体验 | Morpho The Rain</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cataas.com/cat')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第339场周赛</h1>
+                    <h1 class="description center-align post-title">2023-6-25review-后端er的Linux-Ubuntu初体验</h1>
                 </div>
             </div>
         </div>
@@ -429,17 +429,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/leetcode/">
-                                <span class="chip bg-color">leetcode</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%91%A8%E8%B5%9B/">
-                                <span class="chip bg-color">周赛</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -447,8 +439,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/OI%E7%AB%9E%E8%B5%9B/" class="post-category">
-                                OI竞赛
+                            <a href="/categories/review/" class="post-category">
+                                review
                             </a>
                         
                     </div>
@@ -460,7 +452,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2023-04-02
+                    2023-04-03
                 </div>
                 
 
@@ -481,140 +473,192 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>T1本来很简单的, 主要是在想事情没好好做….<br>T2T3每个题都只用了6分钟. 我的全国前500啊 qwq<br>残念残念残念</p>
-<p>正经总结: 这次的三个题总体偏向抽象思维, 没有考察太多算法的内容.<br>但是对于编码能力要求比较高</p>
-<img src="/2023/04/02/%E7%AC%AC339%E5%9C%BA%E5%91%A8%E8%B5%9B/1.png" class="" title="Rank">
-
-<h2 id="T1-平衡字符串"><a href="#T1-平衡字符串" class="headerlink" title="T1 平衡字符串"></a>T1 平衡字符串</h2><h4 id="6362-最长平衡子字符串"><a href="#6362-最长平衡子字符串" class="headerlink" title="6362. 最长平衡子字符串"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-longest-balanced-substring-of-a-binary-string/">6362. 最长平衡子字符串</a></h4><p>给你一个仅由 <code>0</code> 和 <code>1</code> 组成的二进制字符串 <code>s</code> 。  </p>
-<p>如果子字符串中 <strong>所有的</strong> <code>0</code> <strong>都在</strong> <code>1</code> <strong>之前</strong> 且其中 <code>0</code> 的数量等于 <code>1</code> 的数量，则认为 <code>s</code> 的这个子字符串是平衡子字符串。请注意，空子字符串也视作平衡子字符串。 </p>
-<p>返回  <code>s</code> 中最长的平衡子字符串长度。</p>
-<p>子字符串是字符串中的一个连续字符序列。</p>
-<p><strong>示例 1：</strong></p>
-<p><strong>输入</strong>：s &#x3D; “01000111”<br><strong>输出</strong>：6<br><strong>解释</strong>：最长的平衡子字符串是 “000111” ，长度为 6 。</p>
-<h3 id="解法-模拟"><a href="#解法-模拟" class="headerlink" title="解法: 模拟"></a>解法: 模拟</h3><p>T1通用解法, 没什么好说的</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">findTheLongestBalancedSubstring</span><span class="token punctuation">(</span>string s<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> zhan <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> maxcur<span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">bool</span> flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> cur <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>cur<span class="token operator">&lt;</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>cur<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'1'</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>flag<span class="token punctuation">)</span>flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>zhan<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    zhan<span class="token operator">--</span><span class="token punctuation">;</span>
-                    maxcur<span class="token operator">++</span><span class="token punctuation">;</span>
-                    maxcur<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token operator">==</span><span class="token string">'0'</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    zhan <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-                    maxcur <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-                    flag <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                <span class="token keyword">else</span>
-                <span class="token punctuation">{</span>
-                    zhan<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>maxcur<span class="token operator">></span>max<span class="token punctuation">)</span>max<span class="token operator">=</span> maxcur<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> max<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+                <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><h3 id="VMware虚拟机Nat模式无法联网解决方式"><a href="#VMware虚拟机Nat模式无法联网解决方式" class="headerlink" title="VMware虚拟机Nat模式无法联网解决方式"></a>VMware虚拟机Nat模式无法联网解决方式</h3><p>背景：使用mumu模拟器时禁用了hyper-v，之后虚拟机出现连不上网的情况<br>初步调查发现VMwareWorkStationServer服务消失<br>解决过程：</p>
+<ol>
+<li>重置网络：编辑→虚拟网络编辑器→还原默认设置（无效）</li>
+<li>VMware修复：右键VMwareWorkStation选择更改→修复（无效）</li>
+<li>VMware重装：卸载VMware后重装（无效）</li>
+<li>重装虚拟机：彻底删除Ubuntu虚拟机后重新安装并初始化<br>建立新的虚拟机后网络问题解决。</li>
+</ol>
+<h3 id="Linux服务端开发工作流和环境搭建"><a href="#Linux服务端开发工作流和环境搭建" class="headerlink" title="Linux服务端开发工作流和环境搭建"></a>Linux服务端开发工作流和环境搭建</h3><h4 id="工作流："><a href="#工作流：" class="headerlink" title="工作流："></a>工作流：</h4><h5 id="开发环境：neovim"><a href="#开发环境：neovim" class="headerlink" title="开发环境：neovim"></a>开发环境：neovim</h5><h5 id="版本控制：git"><a href="#版本控制：git" class="headerlink" title="版本控制：git"></a>版本控制：git</h5><h5 id="测试工具：待选"><a href="#测试工具：待选" class="headerlink" title="测试工具：待选"></a>测试工具：待选</h5><h4 id="环境搭建："><a href="#环境搭建：" class="headerlink" title="环境搭建："></a>环境搭建：</h4><h5 id="数据库：mySQL和postgreSQL"><a href="#数据库：mySQL和postgreSQL" class="headerlink" title="数据库：mySQL和postgreSQL"></a>数据库：mySQL和postgreSQL</h5><p>同时使用两种数据库<br>使用mySQL存储结构化数据和频繁查询的数据<br>使用postgreSQL存储非结构化数据和频繁更新的数据</p>
+<h5 id="mySQL开发环境配置"><a href="#mySQL开发环境配置" class="headerlink" title="mySQL开发环境配置"></a>mySQL开发环境配置</h5><pre><code>sudo apt-get update
+sudo apt-get install mysql-server #安装服务端
+sudo apt-get install mysql-client #安装客户端
+sudo apt-get install libmysqlcppconn-dev #安装开发套件
 </code></pre>
-<h2 id="T2-二维数组"><a href="#T2-二维数组" class="headerlink" title="T2 二维数组"></a>T2 二维数组</h2><h4 id="6363-转换二维数组"><a href="#6363-转换二维数组" class="headerlink" title="6363. 转换二维数组"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-an-array-into-a-2d-array-with-conditions/">6363. 转换二维数组</a></h4><p>给你一个整数数组 <code>nums</code> 。请你创建一个满足以下条件的二维数组：</p>
-<ul>
-<li>二维数组应该 <strong>只</strong> 包含数组 <code>nums</code> 中的元素。</li>
-<li>二维数组中的每一行都包含 <strong>不同</strong> 的整数。</li>
-<li>二维数组的行数应尽可能 <strong>少</strong> 。</li>
-</ul>
-<p>返回结果数组。如果存在多种答案，则返回其中任何一种。</p>
-<p>请注意，二维数组的每一行上可以存在不同数量的元素。</p>
-<p><strong>示例 1：</strong></p>
-<p><strong>输入</strong>：nums &#x3D; [1,3,4,1,2,3,1]<br><strong>输出</strong>：[[1,3,4,2],[1,3],[1]]<br><strong>解释</strong>：根据题目要求可以创建包含以下几行元素的二维数组：</p>
-<ul>
-<li>1,3,4,2</li>
-<li>1,3</li>
-<li>1<br>nums 中的所有元素都有用到，并且每一行都由不同的整数组成，所以这是一个符合题目要求的答案。<br>可以证明无法创建少于三行且符合题目要求的二维数组。</li>
-</ul>
-<pre class=" language-cpp"><code class="language-cpp">vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> <span class="token function">findMatrix</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        unordered_map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> map<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">:</span> nums<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            map<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">:</span> nums<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            map<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">int</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span> i <span class="token operator">:</span> map<span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>second<span class="token operator">></span>max<span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                max <span class="token operator">=</span> i<span class="token punctuation">.</span>second<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> mat<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>max<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> row<span class="token punctuation">;</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">auto</span><span class="token operator">&amp;</span> i <span class="token operator">:</span> map<span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>second<span class="token operator">!=</span><span class="token number">0</span><span class="token punctuation">)</span>
-                <span class="token punctuation">{</span>
-                    i<span class="token punctuation">.</span>second<span class="token operator">--</span><span class="token punctuation">;</span>
-                    row<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>first<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-            mat<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>row<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> mat<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<p>调用时包含下列头文件</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;cppconn/driver.h&gt;
+#include &lt;cppconn/connection.h&gt;
+#include &lt;cppconn/statement.h&gt;
+#include &lt;cppconn/resultset.h&gt;
 </code></pre>
-<h3 id="解法-无序map-这也算解法吗-gt-lt"><a href="#解法-无序map-这也算解法吗-gt-lt" class="headerlink" title="解法: 无序map(这也算解法吗&gt;&lt;)"></a>解法: 无序map(这也算解法吗&gt;<em>&lt;</em>)</h3><p>找到重复次数k最多的元素, 要保证结果中每一个数组都没有重复的元素<br>则数组的个数至少为k<br>然后把剩下的元素依次放进这k个数组中, 因为它们的数量都小于等于k, 所以可证明一定能放下</p>
-<h2 id="T3-分奶酪"><a href="#T3-分奶酪" class="headerlink" title="T3 分奶酪"></a>T3 分奶酪</h2><h4 id="6364-老鼠和奶酪"><a href="#6364-老鼠和奶酪" class="headerlink" title="6364. 老鼠和奶酪"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/mice-and-cheese/">6364. 老鼠和奶酪</a></h4><p>有两只老鼠和 <code>n</code> 块不同类型的奶酪，每块奶酪都只能被其中一只老鼠吃掉。</p>
-<p>下标为 <code>i</code> 处的奶酪被吃掉的得分为：</p>
-<ul>
-<li>如果第一只老鼠吃掉，则得分为 <code>reward1[i]</code> 。</li>
-<li>如果第二只老鼠吃掉，则得分为 <code>reward2[i]</code> 。</li>
-</ul>
-<p>给你一个正整数数组 <code>reward1</code> ，一个正整数数组 <code>reward2</code> ，和一个非负整数 <code>k</code> 。</p>
-<p>请你返回第一只老鼠恰好吃掉 <code>k</code> 块奶酪的情况下，<strong>最大</strong> 得分为多少。</p>
-<p><strong>示例 1：</strong></p>
-<p><strong>输入</strong>：reward1 &#x3D; [1,1,3,4], reward2 &#x3D; [4,4,1,1], k &#x3D; 2<br><strong>输出</strong>：15<br><strong>解释</strong>：这个例子中，第一只老鼠吃掉第 2 和 3 块奶酪（下标从 0 开始），第二只老鼠吃掉第 0 和 1 块奶酪。<br>总得分为 4 + 4 + 3 + 4 &#x3D; 15 。<br>15 是最高得分。</p>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">int</span> <span class="token function">miceAndCheese</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> reward1<span class="token punctuation">,</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> reward2<span class="token punctuation">,</span> <span class="token keyword">int</span> k<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> cha<span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>reward1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            <span class="token keyword">int</span> c <span class="token operator">=</span> reward1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span>reward2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            cha<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>cha<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>cha<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>reward1<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            ans<span class="token operator">+</span><span class="token operator">=</span>reward2<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">int</span> cur <span class="token operator">=</span> cha<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>k<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-        <span class="token punctuation">{</span>
-            ans <span class="token operator">+</span><span class="token operator">=</span> cha<span class="token punctuation">[</span>cur<span class="token punctuation">]</span><span class="token punctuation">;</span>
-            cur<span class="token operator">--</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
+<p>编译时遇到链接库问题：<br>按照下列指令编译时<br>g++ -o test test.cpp -I&#x2F;usr&#x2F;include&#x2F;mysql-cppconn-8 -L&#x2F;usr&#x2F;lib&#x2F;x86_64-linux-gnu -lmysqlcppconn8<br>g++输出报错信息说明没有找到指定的链接库</p>
+<p>解决方法：<br>使用下列参数进行编译<br>sudo g++ -I&#x2F;usr&#x2F;include&#x2F;cppconn -o test test.cpp -L usr&#x2F;Lib -lmysqlcppconn</p>
+<h5 id="postgreSQL开发环境配置"><a href="#postgreSQL开发环境配置" class="headerlink" title="postgreSQL开发环境配置"></a>postgreSQL开发环境配置</h5><pre><code>sudo apt-get update
+sudo apt-get install postgresql
 </code></pre>
-<h3 id="解法-贪心"><a href="#解法-贪心" class="headerlink" title="解法: 贪心"></a>解法: 贪心</h3><p>首先用reward1减去reward2, 得到一个由差值构成的数组<br>差值为正时说明这块奶酪给第一只老鼠吃得分更大, 为负时说明这块奶酪给第二只老鼠吃分更大<br>将这个差值数组从小到大排序<br>首先让第二只老鼠分走所有的奶酪, 计算出得分<br>然后把差值最大的k个奶酪分给第一只. 把得分依次加上这些差值<br>可以证明最后得到的分数总是最大的</p>
+<p>创建用户和数据库</p>
+<pre><code>CREATE USER myuser WITH PASSWORD &#39;mypassword&#39;;
+CREATE DATABASE mydatabase;
+GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
+</code></pre>
+<p>调用时包含下列头文件</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;pqxx/pqxx&gt;
+</code></pre>
+<p>编译选项</p>
+<pre><code>g++ -o program program.cpp -lpqxx -lpq
+</code></pre>
+<h5 id="网络库：libevent"><a href="#网络库：libevent" class="headerlink" title="网络库：libevent"></a>网络库：libevent</h5><p>环境配置</p>
+<pre><code>sudo apt-get update
+sudo apt-get install libevent-dev
+</code></pre>
+<p>编译选项</p>
+<pre><code>g++ -o my_program my_program.cpp -levent
+</code></pre>
+<p>定时器示例</p>
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;event2/event.h&gt;
+// 定义回调函数
+static void timer_cb(evutil_socket_t fd, short event, void *arg)
+&#123;
+    printf(&quot;Hello, world!\n&quot;);
+    struct timeval tv;
+    tv.tv_sec = 1;
+    tv.tv_usec = 0;
+    // 重新添加定时器
+    event_add((struct event *)arg, &amp;tv);
+&#125;
+int main(int argc, char *argv[])
+&#123;
+    struct event_base *base;
+    struct event *timer_event;
+    struct timeval tv;
+    // 初始化 libevent
+    base = event_base_new();
+    if (!base) &#123;
+        perror(&quot;event_base_new()&quot;);
+        return -1;
+    &#125;
+    // 创建定时器事件
+    tv.tv_sec = 1;
+    tv.tv_usec = 0;
+    timer_event = event_new(base, -1, EV_PERSIST, timer_cb, event_self_cbarg());
+    if (!timer_event) &#123;
+        perror(&quot;event_new()&quot;);
+        return -1;
+    &#125;
+    // 添加定时器事件
+    event_add(timer_event, &amp;tv);
+    // 进入事件循环
+    event_base_dispatch(base);
+    // 释放资源
+    event_free(timer_event);
+    event_base_free(base);
+    return 0;
+&#125;
+</code></pre>
+<h3 id="vim速查表"><a href="#vim速查表" class="headerlink" title="vim速查表"></a>vim速查表</h3><h2 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h2><p><strong>注：一般模式下，任意一个动作都可以重复。</strong></p>
+<p>h                   # 光标左移，同 <Left> 键<br>j                   # 光标下移，同 <Down> 键<br>k                   # 光标上移，同 <Up> 键<br>l                   # 光标右移，同 <Right> 键<br>Ctrl+e              # 向上滚动一行<br>Ctrl+y              # 向下滚动一行<br>Ctrl+u              # 向上滚动半屏 –&gt; Move up 1&#x2F;2 a screen<br>Ctrl+d              # 向下滚动半屏 –&gt; Move down 1&#x2F;2 a screen<br>Ctrl+f              # 向下滚动一屏 –&gt; Move forward one full screen<br>Ctrl+b              # 向上滚动一屏 –&gt; Move back one full screen<br>0                   # 跳到行首，数字 0，效用等同于 <Home> 键<br>^                   # 跳到从行首开始第一个非空白字符<br>$                   # 跳到行尾，效用等同于 <End> 键<br>gg                  # 跳到第一行，效用等同于 Ctrl+<Home><br>G                   # 跳到最后一行，效用等同于 Ctrl+<End><br>nG                  # 跳到第 n 行，比如 10G 是移动到第十行<br>:n                  # 跳到第 n 行，比如 :10<Enter> 是移动到第十行<br>10%                 # 移动到文件 10% 处<br>15|                 # 移动到当前行的 15 列<br>w                   # 跳到下一个单词开头（word：标点或空格分隔的单词）<br>W                   # 跳到下一个单词开头（Word：空格分隔的单词）<br>e                   # 跳到下一个单词尾部（word：标点或空格分隔的单词）<br>E                   # 跳到下一个单词尾部（Word：空格分隔的单词）<br>b                   # 跳到上一个单词开头（word：标点或空格分隔的单词）<br>B                   # 跳到上一个单词开头（Word：空格分隔的单词）<br>ge                  # 跳到前一个单词结尾<br>)                   # 向前移动一个句子（句号分隔）<br>(                   # 向后移动一个句子（句号分隔）<br>}                   # 向前移动一个段落（空行分隔）<br>{                   # 向后移动一个段落（空行分隔）<br><Enter>             # 移动到下一行首个非空字符<br>n<Enter>            # 光标向下移动 n 行</p>
+<ul>
+<li><pre><code>              # 移动到下一行首个非空字符（同回车键）
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><pre><code>              # 移动到上一行首个非空字符
+</code></pre>
+</li>
+</ul>
+<p>H                   # 移动到屏幕上部<br>M                   # 移动到屏幕中部<br>L                   # 移动到屏幕下部<br>&lt;S+Left&gt;            # 按住 Shift 按左键，向左移动一个单词<br>&lt;S+Right&gt;           # 按住 Shift 按右键，向右移动一个单词<br>&lt;S+Up&gt;              # 按住 Shift 按上键，向上翻页<br>&lt;S+Down&gt;            # 按住 Shift 按下键，向下翻页<br>gm                  # 移动到行中<br>gj                  # 光标向下移动一个屏幕行（忽略自动换行）<br>gk                  # 光标向上移动一个屏幕行（忽略自动换行）<br>zz                  # 调整光标所在行到屏幕中央<br>zt                  # 调整光标所在行到屏幕上部<br>zb                  # 调整光标所在行到屏幕下部</p>
+<h2 id="插入模式"><a href="#插入模式" class="headerlink" title="插入模式"></a><a target="_blank" rel="noopener" href="https://gitee.com/sheenisme/vim-cheatsheet#%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F"></a>插入模式</h2><p>i                   # 在光标处进入插入模式<br>I                   # 在行首进入插入模式<br>a                   # 在光标后进入插入模式<br>A                   # 在行尾进入插入模式<br>o                   # 在下一行插入新行并进入插入模式<br>O                   # 在上一行插入新行并进入插入模式<br>gi                  # 进入到上一次插入模式的位置<br><Esc>               # 退出插入模式<br>Ctrl+[              # 退出插入模式（等价于 Esc 键）</p>
+<h2 id="插入模式的命令"><a href="#插入模式的命令" class="headerlink" title="插入模式的命令"></a><a target="_blank" rel="noopener" href="https://gitee.com/sheenisme/vim-cheatsheet#%E6%8F%92%E5%85%A5%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%91%BD%E4%BB%A4"></a>插入模式的命令</h2><p><strong>注：由 i, I, a, A, o, O 等命令进入插入模式。</strong></p>
+<p><Up>                # 光标向上移动<br><Down>              # 光标向下移动<br><Left>              # 光标向左移动<br><Right>             # 光标向右移动<br>&lt;S+Left&gt;            # 按住 Shift 按左键，向左移动一个单词<br>&lt;S+Right&gt;           # 按住 Shift 按右键，向右移动一个单词<br>&lt;S+Up&gt;              # 按住 Shift 按上键，向上翻页<br>&lt;S+Down&gt;            # 按住 Shift 按下键，向下翻页<br><PageUp>            # 上翻页<br><PageDown>          # 下翻页<br><Delete>            # 删除光标处字符<br><Backspace>         # Backspace 向后删除字符<br><Home>              # 光标跳转行首<br><End>               # 光标跳转行尾<br>Ctrl+d              # 减少缩进<br>Ctrl+f              # 减少缩进<br>Ctrl+t              # 增加缩进<br>Ctrl+h              # 删除前一个字符，相当于回格键 Backspace<br>Ctrl+o              # 临时退出插入模式，执行单条命令又返回插入模式<br>Ctrl+u              # 当前行删除到行首所有字符<br>Ctrl+w              # 删除光标前的一个单词<br>Ctrl+\ Ctrl+O       # 临时退出插入模式（光标保持），执行单条命令又返回插入模式<br>Ctrl+R 0            # 插入寄存器（内部 0 号剪贴板）内容，Ctrl+R 后可跟寄存器名<br>Ctrl+R “            # 插入匿名寄存器内容，相当于插入模式下 p 粘贴<br>Ctrl+R &#x3D;            # 插入表达式计算结果，等号后面跟表达式<br>Ctrl+R :            # 插入上一次命令行命令<br>Ctrl+R &#x2F;            # 插入上一次搜索的关键字<br>Ctrl+v {char}       # 插入非数字的字面量<br>Ctrl+v {code}       # 插入用三位数字表示的 ASCII&#x2F;Unicode 字符编码，如 Ctrl+v 065<br>Ctrl+v 065          # 插入 10 进制 ASCII 字符（两数字） 065 即 A 字符<br>Ctrl+v x41          # 插入 16 进制 ASCII 字符（三数字） x41 即 A 字符<br>Ctrl+v o101         # 插入 8 进制 ASCII 字符（三数字） o101 即 A 字符<br>Ctrl+v u1234        # 插入 16 进制 Unicode 字符（四数字）<br>Ctrl+v U12345678    # 插入 16 进制 Unicode 字符（八数字）<br>Ctrl+K {ch1} {ch2}  # 插入 digraph（见 :h digraph），快速输入日文或符号等</p>
+<h2 id="自动补全"><a href="#自动补全" class="headerlink" title="自动补全"></a><a target="_blank" rel="noopener" href="https://gitee.com/sheenisme/vim-cheatsheet#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"></a>自动补全</h2><p>在插入模式下，最常用的补全</p>
+<p>Ctrl+n              # 插入模式下文字自动补全<br>Ctrl+P              # 插入模式下文字自动补全<br>Ctrl+e              # 有补全列表时，终止这次补全，继续输入</p>
+<p><strong>智能补全</strong></p>
+<p>Ctrl+X              # 进入补全模式<br>Ctrl+X Ctrl+L       # 整行补全<br>Ctrl+X Ctrl+N       # 插入模式下，根据当前文件里关键字补全<br>Ctrl+X Ctrl+K       # 根据字典补全<br>Ctrl+X Ctrl+T       # 根据同义词字典补全<br>Ctrl+X Ctrl+F       # 插入模式下补全文件名<br>Ctrl+X Ctrl+I       # 根据头文件内关键字补全<br>Ctrl+X Ctrl+]       # 根据标签补全<br>Ctrl+X Ctrl+D       # 补全宏定义<br>Ctrl+X Ctrl+V       # 补全 Vim 命令<br>Ctrl+X Ctrl+U       # 用户自定义补全方式<br>Ctrl+X Ctrl+S       # 拼写建议，例如：一个英文单词<br>Ctrl+X Ctrl+O       # 插入下 Omnifunc 补全</p>
+<h2 id="文本编辑"><a href="#文本编辑" class="headerlink" title="文本编辑"></a><a target="_blank" rel="noopener" href="https://gitee.com/sheenisme/vim-cheatsheet#%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91"></a>文本编辑</h2><p>r                   # 替换当前字符<br>R                   # 进入替换模式，直至 Esc 离开<br>s                   # 替换字符（删除光标处字符，并进入插入模式，前可接数量）<br>S                   # 替换行（删除当前行，并进入插入模式，前可接数量）<br>cc                  # 改写当前行（删除当前行并进入插入模式），同 S<br>cw                  # 改写光标开始处的当前单词<br>ciw                 # 改写光标所处的单词<br>caw                 # 改写光标所处的单词，并且包括前后空格（如果有的话）<br>c0                  # 改写到行首<br>c^                  # 改写到行首（第一个非零字符）<br>c$                  # 改写到行末<br>C                   # 改写到行尾（同 c$）<br>ci”                 # 改写双引号中的内容<br>ci’                 # 改写单引号中的内容<br>cib                 # 改写小括号中的内容<br>cab                 # 改写小括号中的内容（包含小括号本身）<br>ci)                 # 改写小括号中的内容<br>ci]                 # 改写中括号中内容<br>ciB                 # 改写大括号中内容<br>caB                 # 改写大括号中的内容（包含大括号本身）<br>ci}                 # 改写大括号中内容<br>cit                 # 改写 XML tag 中的内容<br>cis                 # 改写当前句子<br>c2w                 # 改写下两个单词<br>ct(                 # 改写到小括号前<br>x                   # 删除当前字符，前面可以接数字，3x 代表删除三个字符<br>X                   # 向前删除字符<br>dd                  # 删除（剪切）当前行，并把删除的行存到剪贴板里 –&gt; Delete (cut) a line<br>d0                  # 删除（剪切）到行首<br>d^                  # 删除（剪切）到行首（第一个非零字符）<br>d$                  # 删除（剪切）到行末<br>D                   # 删除（剪切）到行末（同 d$）<br>dw                  # 删除（剪切）当前单词<br>diw                 # 删除（剪切）光标所处的单词<br>daw                 # 删除（剪切）光标所处的单词，并包含前后空格（如果有的话）<br>di”                 # 删除双引号中的内容<br>di’                 # 删除单引号中的内容<br>dib                 # 删除小括号中的内容<br>di)                 # 删除小括号中的内容<br>dab                 # 删除小括号内的内容（包含小括号本身）<br>di]                 # 删除中括号中内容<br>diB                 # 删除大括号中内容<br>di}                 # 删除大括号中内容<br>daB                 # 删除大括号内的内容（包含大括号本身）<br>dit                 # 删除 XML 中 tag 中的内容<br>dis                 # 删除当前句子<br>d2w                 # 删除下两个单词<br>dt(                 # 删除到小括号前<br>dgg                 # 删除到文件头部<br>dG                  # 删除到文件尾部<br>d}                  # 删除下一段<br>d{                  # 删除上一段<br>10d                 # 删除当前行开始的 10 行<br>:10d                # 删除第 10 行<br>:1,10d              # 删除 1-10 行<br>J                   # 链接多行为一行<br>.                   # 重复上一次操作<br>~                   # 替换大小写<br>g~iw                # 替换当前单词的大小写<br>gUiw                # 将单词转成大写<br>guiw                # 将当前单词转成小写<br>guu                 # 全行转为小写<br>gUU                 # 全行转为大写<br>&lt;&lt;                  # 减少缩进</p>
+<blockquote>
+<blockquote>
+<pre><code>             # 增加缩进
+</code></pre>
+<p>&#x3D;&#x3D;                  # 自动缩进<br>Ctrl+A              # 增加数字<br>Ctrl+X              # 减少数字</p>
+</blockquote>
+</blockquote>
+<h3 id="Linux基本命令速查表"><a href="#Linux基本命令速查表" class="headerlink" title="Linux基本命令速查表"></a>Linux基本命令速查表</h3><h4 id="一、文件相关操作"><a href="#一、文件相关操作" class="headerlink" title="一、文件相关操作"></a>一、文件相关操作</h4><h5 id="1、创建和查看文件夹"><a href="#1、创建和查看文件夹" class="headerlink" title="1、创建和查看文件夹"></a>1、创建和查看文件夹</h5><p><strong>1）<code>ls</code>命令，查看文件夹下的内容，语法：<code>ls [-参数] [路径]</code></strong></p>
+<p>参数列表：</p>
+<ul>
+<li>a：显示所有文件和目录</li>
+<li>l：显示文件和目录的详细信息</li>
+<li>d：只显示目录</li>
+<li>R：递归显示所有子目录和文件</li>
+</ul>
+<p>示例：<code>ls -l /root/</code></p>
+<p><strong>2）<code>cd</code> 命令，用于切换 当前工作目录，语法：<code>cd [路径名]</code></strong></p>
+<p>特殊路径：~表示登录用户的home，<code>.</code> 表示当前路径，<code>..</code> 表示上级路径</p>
+<p><strong>3）<code>mkdir</code> 创建文件夹 ,语法：<code>mkdir -p [路径，多个路径用空格分开]</code></strong></p>
+<p>参数<code>-p</code> 的作用，是如果路径不存在则进行创建。没有此参数时，创建重复路径会报错。</p>
+<h5 id="2、修改文件夹"><a href="#2、修改文件夹" class="headerlink" title="2、修改文件夹"></a>2、修改文件夹</h5><p><strong>1）<code>mv</code> 命令可以移动文件夹，语法：<code>mv [-参数] 源文件或文件夹，多个源空格分开 目标文件或文件夹</code> 。</strong></p>
+<p>参数说明：</p>
+<ul>
+<li>i：文件重名时，是否询问</li>
+<li>b：文件重名时覆盖，并且对被覆盖的文件进行备份</li>
+</ul>
+<p><strong>2）<code>cp</code> 命令，复制文件，语法和<code>mv</code>相似。</strong></p>
+<p><strong>3）<code>rm</code> 命令，删除文件，语法：<code>rm [-参数] [删除的路径，多个路径空格分开]</code></strong></p>
+<p>参数：</p>
+<ul>
+<li>r：递归删除</li>
+<li>f：只读的文档也删除</li>
+</ul>
+<h5 id="3、查找文件"><a href="#3、查找文件" class="headerlink" title="3、查找文件"></a>3、查找文件</h5><p><code>find</code> 命令，可以查找某个路径下的文件，语法：<code>find [查找的路径] [查找匹配表达式]</code> 。</p>
+<p>查找匹配表达式，用来匹配特定的文件，例如名称为XX的文件等等。</p>
+<p>该命令会遍历路径下所有子文件进行查找。</p>
+<p>4、文件压缩</p>
+<p>常用<code>tar</code> 和<code>gaip</code> 命令。</p>
+<p>5、文件差异</p>
+<p>使用<code>diff</code> 命令</p>
+<h4 id="6、grep-查找字符，可以在某个文件，或者上一步输出的内容中进行查找。"><a href="#6、grep-查找字符，可以在某个文件，或者上一步输出的内容中进行查找。" class="headerlink" title="6、grep 查找字符，可以在某个文件，或者上一步输出的内容中进行查找。"></a>6、<code>grep</code> 查找字符，可以在某个文件，或者上一步输出的内容中进行查找。</h4><p>语法：<code>grep [-参数] 正则表达式 [文件]</code> 。</p>
+<p>其中，正则表达式部分，可以是一个字符串，也可以是正则表达式，用于文本查找。</p>
+<p>参数部分，常用参数如下：</p>
+<ul>
+<li>i：忽略匹配的大小写</li>
+<li>n：显示匹配行号</li>
+<li>c：计算符合的列数</li>
+</ul>
+<p>一个典型的应用场景，就是在进程信息中进行查找，例如：</p>
+<pre class=" language-text"><code class="language-text"># 列出所有进程
+ps -aux
+# 但是我们想要查看python相关进程，或者nodejs相关进程，就需要对输出进行文本过滤
+ps -aux | grep node
+</code></pre>
+<p>####二、网络管理</p>
+<h5 id="1、ip信息"><a href="#1、ip信息" class="headerlink" title="1、ip信息"></a>1、ip信息</h5><p><code>ipconfig</code> ，用于显示网络信息，还能配置某个网卡的信息 。</p>
+<p>1）运行<code>ipconfig</code></p>
+<p>查看当前设备的网卡信息</p>
+<p>2）网卡操作：<code>ipconfig 网卡名 [操作名] [操作参数]</code></p>
+<p>2、<code>ping</code> 命令，用于测试链接</p>
+<h5 id="3、netstat-用于显示网络状态，语法：netstat-参数"><a href="#3、netstat-用于显示网络状态，语法：netstat-参数" class="headerlink" title="3、netstat 用于显示网络状态，语法：netstat [-参数]"></a>3、<code>netstat</code> 用于显示网络状态，语法：<code>netstat [-参数]</code></h5><p>一些重要的参数：</p>
+<ul>
+<li>a：显示所有的socket连接</li>
+<li>p：使用socket的程序信息</li>
+<li>t：使用tcp的连接状态</li>
+<li>u：使用udp的连接状态</li>
+</ul>
+<h4 id="三、进程管理"><a href="#三、进程管理" class="headerlink" title="三、进程管理"></a>三、进程管理</h4><p>1、<code>ps</code> 显示所有进程：<code>ps [参数]</code></p>
+<p>由于参数较多，其常使用的固定搭配<code>ps -aux</code> 用于列出所有的进程，参数列表：</p>
+<ul>
+<li>A，e：显示所有进程</li>
+<li>a：显示一个终端的所有进程</li>
+<li>u：显示进程的归属用户，以及内存使用情况</li>
+<li>x：显示没有终端进行控制的进程</li>
+<li>l：显示详细信息</li>
+</ul>
+<p>2、<code>kill</code> 命令终止进程，语法：<code>kill 进程号</code></p>
+<p>3、<code>nohup</code> 退出终端后仍然运行命令，语法：<code>nohup 命令 [-参数] &amp;</code> 。</p>
 
                 
             </div>
@@ -641,7 +685,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://morphotherain.github.io/2023/04/02/%E7%AC%AC339%E5%9C%BA%E5%91%A8%E8%B5%9B/">https://morphotherain.github.io/2023/04/02/%E7%AC%AC339%E5%9C%BA%E5%91%A8%E8%B5%9B/</a>
+                    <a href="https://morphotherain.github.io/2023/04/03/review/">https://morphotherain.github.io/2023/04/03/review/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -678,15 +722,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/leetcode/">
-                                    <span class="chip bg-color">leetcode</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%91%A8%E8%B5%9B/">
-                                    <span class="chip bg-color">周赛</span>
-                                </a>
-                            
+                            <span class="chip bg-color">No tag</span>
                         </div>
                     
                 </div>
@@ -732,18 +768,18 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2023/04/03/review/">
+                <a href="/2023/04/03/%E6%9A%97%E6%97%B6%E9%97%B4%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
-                        <img src="https://cataas.com/cat" class="responsive-img" alt="2023-6-25review-后端er的Linux-Ubuntu初体验">
+                        <img src="https://cataas.com/cat" class="responsive-img" alt="《暗时间》阅读笔记">
                         
-                        <span class="card-title">2023-6-25review-后端er的Linux-Ubuntu初体验</span>
+                        <span class="card-title">《暗时间》阅读笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            书写自己的思想是一件容易产生流体验的事情，在书写的时候，特别是理性书写的时候，大脑逐渐进入推理分析模块，一切不愉快的情绪，烦躁感都会逐渐消隐下去
                         
                     </div>
                     <div class="publish-info">
@@ -754,8 +790,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/review/" class="post-category">
-                                    review
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    读书笔记
                                 </a>
                             
                             
@@ -772,12 +808,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/03/29/%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%96%B0%E5%9F%BA%E5%BB%BA-%E6%9C%AA%E6%9D%A5%E5%B8%83%E5%B1%80%E4%B8%8E%E8%A1%8C%E5%8A%A8%E8%B7%AF%E7%BA%BF%E3%80%8B%E7%AC%94%E8%AE%B0/">
+                <a href="/2023/04/02/%E7%AC%AC339%E5%9C%BA%E5%91%A8%E8%B5%9B/">
                     <div class="card-image">
                         
-                        <img src="/medias/f/1.png" class="responsive-img" alt="《中国新基建:未来布局与行动路线》笔记">
                         
-                        <span class="card-title">《中国新基建:未来布局与行动路线》笔记</span>
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第339场周赛">
+                        
+                        <span class="card-title">第339场周赛</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -788,19 +825,31 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-29
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-02
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    读书笔记
+                            <a href="/categories/OI%E7%AB%9E%E8%B5%9B/" class="post-category">
+                                    OI竞赛
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%91%A8%E8%B5%9B/">
+                        <span class="chip bg-color">周赛</span>
+                    </a>
+                    
                 </div>
                 
             </div>
