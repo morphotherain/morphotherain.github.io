@@ -513,8 +513,23 @@ Plug &#39;tpope/vim-surround&#39;
 <p>多试几次即可(<br>实在不行等个半天再安装</p>
 <p>安装完成后coc.vim提示node is not exectuable,<br>这是因为没有安装coc的依赖项node.js<br>运行以下命令安装<br>sudo apt isntall nodejs npm<br>sudo npm i -g yarn</p>
 <p>安装完成后打开nvim显示node.js版本太低<br>按照如下方法更新node.js</p>
-<p>安装nvm<br>curl -o- <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh">https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh</a> | bash</p>
-<p>安装node.js<br>这个我用了很久很久的时间都没办法正常使用wget下载安装<br>所以最后选择了离线安装的方式</p>
+<p>安装node.js<br>这个我用了很久很久的时间都没办法正常使用wget下载安装<br>所以最后选择了离线安装的方式.具体步骤太多复杂建议自行百度</p>
+<p>总之成功安装node.js&gt;14.14.0之后(我装的是14.15)<br>就可以激活coc的自动补全了,但是实际使用中发现<br>无论按下Tab还是ctrl+空格,都没有办法触发自动补全项<br>经过排查之后发现是没有配置快捷键的原因</p>
+<p>在~&#x2F;.config&#x2F;nvim&#x2F;init.vim 文件的末尾加入下列代码并保存</p>
+<pre><code>set nobackup
+set nowritebackup
+set updatetime=300
+set signcolumn=yes
+inoremap &lt;silent&gt;&lt;expr&gt; &lt;TAB&gt;
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? &quot;\&lt;Tab&gt;&quot; :
+      \ coc#refresh()
+inoremap &lt;expr&gt;&lt;S-TAB&gt; coc#pum#visible() ? coc#pum#prev(1) : &quot;\&lt;C-h&gt;&quot;
+
+inoremap &lt;silent&gt;&lt;expr&gt; &lt;CR&gt; coc#pum#visible() ? coc#pum#confirm()
+                              \: &quot;\&lt;C-g&gt;u\&lt;CR&gt;\&lt;c-r&gt;=coc#on_enter()\&lt;CR&gt;&quot;
+</code></pre>
+<p>重启nvim, 成功出发自动补全&#x3D;w&#x3D;<br>累死我了…..</p>
 <h4 id="postgreSQL连接测试"><a href="#postgreSQL连接测试" class="headerlink" title="postgreSQL连接测试"></a>postgreSQL连接测试</h4><p>新建一个用户testuser并设定密码 ，新建一个数据库testdb<br>新建文件postgreSQLtest.cpp<br>输入以下内容：</p>
 <pre><code>#include &lt;iostream&gt;
 #include &lt;pqxx/pqxx&gt;
