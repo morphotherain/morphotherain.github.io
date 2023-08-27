@@ -473,7 +473,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="0-背景和环境介绍"><a href="#0-背景和环境介绍" class="headerlink" title="0. 背景和环境介绍"></a>0. 背景和环境介绍</h3><p>服务器：阿里云轻量应用服务器（一年期）<br>系统：Ubuntu20.02</p>
+                <h3 id="0-背景和环境介绍"><a href="#0-背景和环境介绍" class="headerlink" title="0. 背景和环境介绍"></a>0. 背景和环境介绍</h3><p>服务器：阿里云轻量应用服务器（一年期）<br>系统：Ubuntu20.02<br>背景：某日，观旧有阿里云之机与界域之名，骤生一念：欲借以托置一网，仿某人工智慧之对话良制。私定志于后，以供北科之校园风云，望其效若问讯之台。欲望使然，费尽心机，终得此对话之机制。已试之，果然如意。遭逢之难，皆记于此，以资后日之修护。</p>
 <h3 id="1-网站托管"><a href="#1-网站托管" class="headerlink" title="1. 网站托管"></a>1. 网站托管</h3><h5 id="1-1网页前端代码"><a href="#1-1网页前端代码" class="headerlink" title="1.1网页前端代码"></a>1.1网页前端代码</h5><h6 id="html代码："><a href="#html代码：" class="headerlink" title="html代码："></a>html代码：</h6><pre><code>简单的对话框和发送按钮
 </code></pre>
 <pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
@@ -498,6 +498,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>"
 </code></pre>
 <h6 id="js代码："><a href="#js代码：" class="headerlink" title="js代码："></a>js代码：</h6><pre><code>只负责向后端发送请求和向页面增加对话
+fetch中的连接不能是localhost:8080 必须把域名写出来
 </code></pre>
 <pre class=" language-javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"sendButton"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> userInput <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"userInput"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value<span class="token punctuation">;</span>
@@ -546,6 +547,9 @@
 <pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> flask_cors <span class="token keyword">import</span> CORS 
 <span class="token comment" spellcheck="true"># ...</span>
 CORS<span class="token punctuation">(</span>app<span class="token punctuation">)</span>
+</code></pre>
+<p>4.设置端口</p>
+<pre><code>app.run(host=&#39;0.0.0.0&#39;, port=8080)
 </code></pre>
 <p>完整代码</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> request<span class="token punctuation">,</span> jsonify<span class="token punctuation">,</span> session
