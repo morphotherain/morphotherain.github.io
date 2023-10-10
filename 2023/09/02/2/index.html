@@ -672,9 +672,6 @@ window<span class="token punctuation">.</span>onload <span class="token operator
         <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">radial-gradient</span><span class="token punctuation">(</span>circle, <span class="token function">var</span><span class="token punctuation">(</span>--gradient-start, <span class="token hexcode">#f4f4f4</span><span class="token punctuation">)</span>, <span class="token function">var</span><span class="token punctuation">(</span>--gradient-end, <span class="token hexcode">#e0e0e0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">/* 使用径向渐变 */</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-
-<span class="token comment" spellcheck="true">/* ... 其他样式 ... */</span>
-
 </code></pre>
 <pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">updateGradient</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">const</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -698,6 +695,36 @@ window<span class="token punctuation">.</span>onload <span class="token operator
 
 window<span class="token punctuation">.</span>onload <span class="token operator">=</span> updateGradient<span class="token punctuation">;</span>
 </code></pre>
+<p>这段JavaScript代码用于根据当前时间动态更新页面的背景渐变颜色。以下是代码的更新说明：</p>
+<ol>
+<li><p>获取当前时间：</p>
+<ul>
+<li>使用 <code>new Date()</code> 创建一个新的 <code>Date</code> 对象，以获取当前日期和时间。</li>
+</ul>
+</li>
+<li><p>获取当前小时：</p>
+<ul>
+<li>通过 <code>getHours()</code> 方法获取当前时间的小时部分，用于判断当前时间所属的时间段。</li>
+</ul>
+</li>
+<li><p>根据时间段设置渐变颜色：</p>
+<ul>
+<li>使用条件语句根据当前小时判断时间段，然后分别为 <code>gradientStart</code> 和 <code>gradientEnd</code> 变量赋值不同的颜色值。</li>
+<li>每个时间段对应不同的背景渐变起始色和结束色。</li>
+</ul>
+</li>
+<li><p>更新页面背景渐变颜色：</p>
+<ul>
+<li>使用 <code>document.body.style.setProperty</code> 方法分别为页面的 <code>--gradient-start</code> 和 <code>--gradient-end</code> 自定义属性设置新的颜色值。</li>
+<li>这些自定义属性可以在CSS中使用，用于定义页面背景渐变的起始色和结束色。</li>
+</ul>
+</li>
+<li><p>设置窗口加载时的更新：</p>
+<ul>
+<li>使用 <code>window.onload</code> 事件将 <code>updateGradient</code> 函数绑定到页面加载完成的时机，以确保页面加载时调用该函数一次。</li>
+</ul>
+</li>
+</ol>
 <h3 id="5-实现按钮点击相应和锁定"><a href="#5-实现按钮点击相应和锁定" class="headerlink" title="5.实现按钮点击相应和锁定"></a>5.实现按钮点击相应和锁定</h3><h6 id="修改HTML部分："><a href="#修改HTML部分：" class="headerlink" title="修改HTML部分："></a>修改HTML部分：</h6><p>在<code>&lt;button&gt;</code>标签内部添加一个<code>&lt;span&gt;</code>元素，用于显示冷却剩余的时间。</p>
 <pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>sendButton<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cooldownButton()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Send <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cooldownTimer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
 </code></pre>
@@ -721,6 +748,38 @@ window<span class="token punctuation">.</span>onload <span class="token operator
     <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 每秒更新一次</span>
 <span class="token punctuation">}</span>
 </code></pre>
+<ol>
+<li>获取按钮元素和冷却时间元素：<ul>
+<li>使用 <code>document.getElementById(&#39;sendButton&#39;)</code> 获取页面上的按钮元素，用于进行操作。</li>
+<li>使用 <code>document.getElementById(&#39;cooldownTimer&#39;)</code> 获取页面上用于显示冷却时间的元素，以便在冷却过程中更新倒计时。</li>
+</ul>
+</li>
+<li>初始化冷却时间：<ul>
+<li>初始冷却时间设置为60秒（1分钟），用于冷却按钮的操作。</li>
+</ul>
+</li>
+<li>禁用按钮并显示初始倒计时：<ul>
+<li>将按钮的 <code>disabled</code> 属性设置为 <code>true</code>，以禁用按钮，防止在冷却过程中多次点击。</li>
+<li>在冷却时间元素中显示初始倒计时，格式为 <code>($&#123;remainingTime&#125;s)</code>。</li>
+</ul>
+</li>
+<li>设置倒计时更新间隔：<ul>
+<li>使用 <code>setInterval</code> 创建一个定时器，每隔1秒执行一次回调函数。</li>
+</ul>
+</li>
+<li>更新倒计时和按钮状态：<ul>
+<li>在回调函数中，将剩余冷却时间递减1秒。</li>
+<li>更新冷却时间元素的内容，显示更新后的倒计时。</li>
+<li>如果剩余冷却时间小于等于0，清除定时器以停止倒计时。</li>
+<li>将按钮的 <code>disabled</code> 属性设置为 <code>false</code>，以启用按钮。</li>
+<li>清空冷却时间元素的内容，以清除倒计时显示。</li>
+</ul>
+</li>
+<li>设置定时器间隔：<ul>
+<li>定时器每隔1秒（1000毫秒）执行一次回调函数，用于更新倒计时和按钮状态。</li>
+</ul>
+</li>
+</ol>
 <h6 id="修改CSS部分使按钮变灰"><a href="#修改CSS部分使按钮变灰" class="headerlink" title="修改CSS部分使按钮变灰"></a>修改CSS部分使按钮变灰</h6><pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.chat-input</span> button<span class="token pseudo-class">:disabled</span> </span><span class="token punctuation">{</span>
     <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token hexcode">#ccc</span><span class="token punctuation">;</span>
     <span class="token property">cursor</span><span class="token punctuation">:</span> not-allowed<span class="token punctuation">;</span>
